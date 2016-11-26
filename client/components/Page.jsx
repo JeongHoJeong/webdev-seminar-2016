@@ -1,12 +1,12 @@
 import React from 'react'
 import { ConfiguredRadium } from 'util'
 
-class Center extends React.Component {
+class Page extends React.Component {
   render () {
     const style = {
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
+      position: 'absolute',
+      left: 0,
+      top: 0,
       width: '100%',
       height: '100%'
     }
@@ -21,4 +21,4 @@ class Center extends React.Component {
   }
 }
 
-export default ConfiguredRadium(Center)
+export default ConfiguredRadium(Page)

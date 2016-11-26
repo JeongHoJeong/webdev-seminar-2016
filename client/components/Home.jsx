@@ -1,6 +1,6 @@
 import React from 'react'
 import { ConfiguredRadium, Colors } from 'util'
-import Screen from 'Screen'
+import Center from 'Center'
 
 class Home extends React.Component {
   render () {
@@ -9,11 +9,11 @@ class Home extends React.Component {
     }
 
     return (
-      <Screen
+      <Center
         style={style}
       >
         Home
-      </Screen>
+      </Center>
     )
   }
 }

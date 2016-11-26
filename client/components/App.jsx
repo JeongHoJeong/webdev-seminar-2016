@@ -3,6 +3,7 @@ import { ConfiguredRadium, KeyCodes } from 'util'
 import { RouteTransition } from 'react-router-transition'
 
 import Navigator from 'Navigator'
+import pages from 'pages'
 
 class App extends React.Component {
   constructor (props) {
@@ -11,7 +12,7 @@ class App extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this)
 
     this.state = {
-      position: 0
+      page: 0
     }
   }
 
@@ -23,19 +24,37 @@ class App extends React.Component {
     document.removeEventListener('keydown', this.handleKeyDown)
   }
 
+  goToNextPage () {
+    if (this.state.page < pages.length - 1) {
+      this.setState({
+        page: this.state.page + 1
+      })
+      this.context.router.push({
+        pathname: `/foo/${this.state.page}`
+      })
+    }
+  }
+
+  goToPrevPage () {
+    if (this.state.page > 0) {
+      this.setState({
+        page: this.state.page - 1
+      })
+      this.context.router.push({
+        pathname: `/foo/${this.state.page}`
+      })
+    }
+  }
+
   handleKeyDown (event) {
-    if (event.keyCode === KeyCodes.space) {
-      if (this.state.position === 0) {
-        this.setState({
-          position: 1
-        })
-        this.context.router.push('/foo')
-      } else {
-        this.setState({
-          position: 0
-        })
-        this.context.router.push('/')
-      }
+    switch (event.keyCode) {
+      case KeyCodes.arrowRight:
+      case KeyCodes.space:
+        this.goToNextPage()
+        break
+      case KeyCodes.arrowLeft:
+        this.goToPrevPage()
+        break
     }
   }
 
@@ -59,7 +78,7 @@ class App extends React.Component {
           mapStyles={styles => ({transform: `translateX(${styles.translateX}%)`})}
           className='transition-wrapper'
         >
-          {this.props.children}
+          {React.createElement(pages[this.state.page])}
         </RouteTransition>
         <Navigator />
       </div>

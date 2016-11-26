@@ -12,7 +12,8 @@ module.exports = {
       path.resolve('./client/assets/'),
       path.resolve('./client/components/'),
       path.resolve('./client/layouts/'),
-      path.resolve('./client/lib')
+      path.resolve('./client/lib'),
+      path.resolve('./client/pages')
     ],
     extensions: ['', '.js', '.jsx']
   },

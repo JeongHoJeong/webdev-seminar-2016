@@ -1,7 +1,11 @@
 import Radium from 'radium'
 
 let KeyCodes = {
-  space: 32
+  space: 32,
+  arrowLeft: 37,
+  arrowUp: 38,
+  arrowRight: 39,
+  arrowDown: 40
 }
 
 function ConfiguredRadium (component) {
