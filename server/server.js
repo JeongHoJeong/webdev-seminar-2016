@@ -1,16 +1,16 @@
-'use strict';
+'use strict'
 
-var koa = require('koa');
-var serve = require('koa-static');
+var koa = require('koa')
+var serve = require('koa-static')
 
-var app = koa();
+var app = koa()
 
-app.use(serve('.'));
+app.use(serve('.'))
 
 app.use(function*() {
-  this.type = 'text/html';
+  this.type = 'text/html'
   this.body = `<div id='root'></div>
-  <script src='dist/bundle.js'></script>`;
-});
+  <script src='dist/bundle.js'></script>`
+})
 
-app.listen(3000);
+app.listen(3000)

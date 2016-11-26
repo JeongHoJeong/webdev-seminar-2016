@@ -1,8 +1,16 @@
+var path = require('path')
+
 module.exports = {
   entry: './client/index.jsx',
   output: {
-    path: __dirname + '/dist',
+    path: path.resolve('./dist'),
     filename: 'bundle.js'
+  },
+  resolve: {
+    root: [
+      path.resolve('./client')
+    ],
+    extensions: ['', '.js', '.jsx']
   },
   module: {
     loaders: [
@@ -15,4 +23,4 @@ module.exports = {
       }
     ]
   }
-};
+}
