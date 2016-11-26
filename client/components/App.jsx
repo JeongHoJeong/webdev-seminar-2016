@@ -30,7 +30,7 @@ class App extends React.Component {
         page: this.state.page + 1
       })
       this.context.router.push({
-        pathname: `/foo/${this.state.page}`
+        pathname: `/page/${this.state.page}`
       })
     }
   }
@@ -41,7 +41,7 @@ class App extends React.Component {
         page: this.state.page - 1
       })
       this.context.router.push({
-        pathname: `/foo/${this.state.page}`
+        pathname: `/page/${this.state.page}`
       })
     }
   }

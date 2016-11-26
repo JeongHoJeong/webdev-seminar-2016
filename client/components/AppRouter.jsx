@@ -1,16 +1,15 @@
 import React from 'react'
-import { IndexRoute, Router, Route, browserHistory } from 'react-router'
+import { IndexRedirect, Router, Route, browserHistory } from 'react-router'
 
 import App from 'App'
-import Home from 'Home'
-import Foo from 'Foo'
+import Page from 'Page'
 import NotFound from 'NotFound'
 
 let AppRouter = (
   <Router history={browserHistory}>
     <Route path='/' component={App}>
-      <IndexRoute component={Home} />
-      <Route path='foo/*' component={Foo} />
+      <IndexRedirect to='page/0' />
+      <Route path='page/*' component={Page} />
       <Route path='*' component={NotFound} />
     </Route>
   </Router>
