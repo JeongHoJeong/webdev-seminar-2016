@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfiguredRadium, KeyCodes } from 'util'
+import { ConfiguredRadium, KeyCodes, Utils } from 'util'
 import { RouteTransition } from 'react-router-transition'
 
 import Navigator from 'Navigator'
@@ -12,7 +12,7 @@ class App extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this)
 
     this.state = {
-      page: 0
+      page: Utils.getCurrentPage()
     }
   }
 
@@ -25,7 +25,7 @@ class App extends React.Component {
   }
 
   goToNextPage () {
-    if (this.state.page < pages.length - 1) {
+    if (this.state.page < pages.length) {
       this.setState({
         page: this.state.page + 1
       })
@@ -36,7 +36,7 @@ class App extends React.Component {
   }
 
   goToPrevPage () {
-    if (this.state.page > 0) {
+    if (this.state.page > 1) {
       this.setState({
         page: this.state.page - 1
       })
@@ -76,9 +76,10 @@ class App extends React.Component {
           atLeave={{translateX: -100}}
           atActive={{translateX: 0}}
           mapStyles={styles => ({transform: `translateX(${styles.translateX}%)`})}
+          runOnMount={false}
           className='transition-wrapper'
         >
-          {React.createElement(pages[this.state.page])}
+          {this.props.children}
         </RouteTransition>
         <Navigator />
       </div>

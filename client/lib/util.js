@@ -29,4 +29,13 @@ let Colors = {
   themeBackgroundDark: '#8d99ae'
 }
 
-export { KeyCodes, ConfiguredRadium, Colors }
+let Utils = {
+  getCurrentPage: () => {
+    const regex = /page\/([0-9]+)/m
+    let match = regex.exec(window.location.href)
+
+    return match && parseInt(match[1])
+  }
+}
+
+export { KeyCodes, ConfiguredRadium, Colors, Utils }

@@ -2,14 +2,14 @@ import React from 'react'
 import { IndexRedirect, Router, Route, browserHistory } from 'react-router'
 
 import App from 'App'
-import Page from 'Page'
+import Screen from 'Screen'
 import NotFound from 'NotFound'
 
 let AppRouter = (
   <Router history={browserHistory}>
     <Route path='/' component={App}>
-      <IndexRedirect to='page/0' />
-      <Route path='page/*' component={Page} />
+      <IndexRedirect to='page/1' />
+      <Route path='page/*' component={Screen} />
       <Route path='*' component={NotFound} />
     </Route>
   </Router>
