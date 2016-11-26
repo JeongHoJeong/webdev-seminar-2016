@@ -1,6 +1,6 @@
 import React from 'react'
 import { ConfiguredRadium, Colors } from 'util'
-import Screen from 'screen'
+import Screen from 'Screen'
 
 class Home extends React.Component {
   render () {

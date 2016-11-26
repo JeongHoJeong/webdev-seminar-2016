@@ -2,6 +2,8 @@ import React from 'react'
 import { ConfiguredRadium, KeyCodes } from 'util'
 import { RouteTransition } from 'react-router-transition'
 
+import Navigator from 'Navigator'
+
 class App extends React.Component {
   constructor (props) {
     super(props)
@@ -38,23 +40,29 @@ class App extends React.Component {
   }
 
   render () {
-    const style = {
-      width: '100%',
-      height: '100%'
+    const styles = {
+      base: {
+        width: '100%',
+        height: '100%'
+      }
     }
 
     return (
-      <RouteTransition
-        pathname={this.props.location.pathname}
-        atEnter={{translateX: 100}}
-        atLeave={{translateX: -100}}
-        atActive={{translateX: 0}}
-        mapStyles={styles => ({transform: `translateX(${styles.translateX}%)`})}
-        style={style}
-        className='transition-wrapper'
+      <div
+        style={styles.base}
       >
-        {this.props.children}
-      </RouteTransition>
+        <RouteTransition
+          pathname={this.props.location.pathname}
+          atEnter={{translateX: 100}}
+          atLeave={{translateX: -100}}
+          atActive={{translateX: 0}}
+          mapStyles={styles => ({transform: `translateX(${styles.translateX}%)`})}
+          className='transition-wrapper'
+        >
+          {this.props.children}
+        </RouteTransition>
+        <Navigator />
+      </div>
     )
   }
 }

@@ -1,6 +1,6 @@
 import React from 'react'
 import { ConfiguredRadium, Colors } from 'util'
-import Center from 'layouts/Center'
+import Center from 'Center'
 
 class Foo extends React.Component {
   render () {
