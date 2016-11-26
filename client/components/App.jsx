@@ -9,10 +9,12 @@ class App extends React.Component {
   constructor (props) {
     super(props)
 
+    this.go = this.go.bind(this)
     this.handleKeyDown = this.handleKeyDown.bind(this)
 
     this.state = {
-      page: Utils.getCurrentPage()
+      page: Utils.getCurrentPage(),
+      pageDelta: 1
     }
   }
 
@@ -24,24 +26,17 @@ class App extends React.Component {
     document.removeEventListener('keydown', this.handleKeyDown)
   }
 
-  goToNextPage () {
-    if (this.state.page < pages.length) {
-      this.setState({
-        page: this.state.page + 1
-      })
-      this.context.router.push({
-        pathname: `/page/${this.state.page}`
-      })
-    }
-  }
+  go (delta) {
+    const newPage = this.state.page + delta
 
-  goToPrevPage () {
-    if (this.state.page > 1) {
+    if (newPage <= pages.length && newPage >= 1) {
       this.setState({
-        page: this.state.page - 1
+        page: newPage,
+        pageDelta: delta
       })
+
       this.context.router.push({
-        pathname: `/page/${this.state.page}`
+        pathname: `/page/${newPage}`
       })
     }
   }
@@ -50,10 +45,10 @@ class App extends React.Component {
     switch (event.keyCode) {
       case KeyCodes.arrowRight:
       case KeyCodes.space:
-        this.goToNextPage()
+        this.go(+1)
         break
       case KeyCodes.arrowLeft:
-        this.goToPrevPage()
+        this.go(-1)
         break
     }
   }
@@ -72,8 +67,8 @@ class App extends React.Component {
       >
         <RouteTransition
           pathname={this.props.location.pathname}
-          atEnter={{translateX: 100}}
-          atLeave={{translateX: -100}}
+          atEnter={{translateX: 100 * this.state.pageDelta}}
+          atLeave={{translateX: -100 * this.state.pageDelta}}
           atActive={{translateX: 0}}
           mapStyles={styles => ({transform: `translateX(${styles.translateX}%)`})}
           runOnMount={false}
