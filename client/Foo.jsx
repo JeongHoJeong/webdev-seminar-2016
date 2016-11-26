@@ -1,13 +1,21 @@
 import React from 'react'
+import { ConfiguredRadium, Colors } from 'util'
+import Center from 'layouts/Center'
 
 class Foo extends React.Component {
   render () {
+    const style = {
+      backgroundColor: Colors.themeBackgroundLight
+    }
+
     return (
-      <div>
+      <Center
+        style={style}
+      >
         FOO!
-      </div>
+      </Center>
     )
   }
 }
 
-export default Foo
+export default ConfiguredRadium(Foo)

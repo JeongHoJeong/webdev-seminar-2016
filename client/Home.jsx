@@ -1,13 +1,21 @@
 import React from 'react'
+import { ConfiguredRadium, Colors } from 'util'
+import Screen from 'screen'
 
 class Home extends React.Component {
   render () {
+    const style = {
+      backgroundColor: Colors.themeBackgroundDark
+    }
+
     return (
-      <div>
-        FOO!
-      </div>
+      <Screen
+        style={style}
+      >
+        Home
+      </Screen>
     )
   }
 }
 
-export default Home
+export default ConfiguredRadium(Home)

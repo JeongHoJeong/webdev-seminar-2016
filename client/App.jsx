@@ -1,6 +1,6 @@
 import React from 'react'
-import { Motion, spring, presets } from 'react-motion'
-import { KeyCodes } from 'util'
+import { ConfiguredRadium, KeyCodes } from 'util'
+import { RouteTransition } from 'react-router-transition'
 
 class App extends React.Component {
   constructor (props) {
@@ -25,34 +25,42 @@ class App extends React.Component {
     if (event.keyCode === KeyCodes.space) {
       if (this.state.position === 0) {
         this.setState({
-          position: 300
+          position: 1
         })
+        this.context.router.push('/foo')
       } else {
         this.setState({
           position: 0
         })
+        this.context.router.push('/')
       }
     }
   }
 
   render () {
+    const style = {
+      width: '100%',
+      height: '100%'
+    }
+
     return (
-      <Motion
-        defaultStyle={{x: 0}}
-        style={{x: spring(this.state.position, presets.wobbly)}}
+      <RouteTransition
+        pathname={this.props.location.pathname}
+        atEnter={{translateX: 100}}
+        atLeave={{translateX: -100}}
+        atActive={{translateX: 0}}
+        mapStyles={styles => ({transform: `translateX(${styles.translateX}%)`})}
+        style={style}
+        className='transition-wrapper'
       >
-        {value =>
-          <div
-            style={{
-              marginLeft: `${value.x}px`
-            }}
-          >
-            {Math.round(value.x)}
-          </div>
-        }
-      </Motion>
+        {this.props.children}
+      </RouteTransition>
     )
   }
 }
 
-export default App
+App.contextTypes = {
+  router: React.PropTypes.object
+}
+
+export default ConfiguredRadium(App)
