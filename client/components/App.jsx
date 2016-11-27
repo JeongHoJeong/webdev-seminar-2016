@@ -1,6 +1,6 @@
 import React from 'react'
 import { ConfiguredRadium, KeyCodes, Utils } from 'util'
-import { RouteTransition } from 'react-router-transition'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import Navigator from 'Navigator'
 import pages from 'pages'
@@ -56,8 +56,15 @@ class App extends React.Component {
   render () {
     const styles = {
       base: {
-        width: '100%',
-        height: '100%'
+        width: '100vw',
+        height: '100vh',
+        position: 'absolute',
+        overflow: 'hidden'
+      },
+      transitionGroup: {
+        width: '100vw',
+        height: '100vh',
+        position: 'absolute'
       }
     }
 
@@ -65,17 +72,18 @@ class App extends React.Component {
       <div
         style={styles.base}
       >
-        <RouteTransition
-          pathname={this.props.location.pathname}
-          atEnter={{translateX: 100 * this.state.pageDelta}}
-          atLeave={{translateX: -100 * this.state.pageDelta}}
-          atActive={{translateX: 0}}
-          mapStyles={styles => ({transform: `translateX(${styles.translateX}%)`})}
-          runOnMount={false}
-          className='transition-wrapper'
+        <ReactCSSTransitionGroup
+          transitionName={this.state.pageDelta > 0 ? 'slide-left' : 'slide-right'}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
         >
-          {this.props.children}
-        </RouteTransition>
+          <div
+            key={this.state.page}
+            style={styles.transitionGroup}
+          >
+            {this.props.children}
+          </div>
+        </ReactCSSTransitionGroup>
         <Navigator />
       </div>
     )

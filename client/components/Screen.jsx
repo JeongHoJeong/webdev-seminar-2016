@@ -4,17 +4,31 @@ import { ConfiguredRadium, Utils } from 'util'
 import NotFound from 'NotFound'
 
 class Screen extends React.Component {
-  componentWillMount () {
-    this.page = Utils.getCurrentPage()
+  constructor (props) {
+    super(props)
+
+    this.state = {
+      page: Utils.getCurrentPage()
+    }
+  }
+
+  componentWillReceiveProps (props) {
+    this.setState({
+      page: props.routeParams.splat
+    })
   }
 
   render () {
-    if (!this.page || this.page > pages.length) {
+    if (!this.state.page || this.state.page > pages.length) {
       return <NotFound />
     }
 
-    return React.createElement(pages[this.page - 1])
+    return React.createElement(pages[this.state.page - 1])
   }
+}
+
+Screen.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default ConfiguredRadium(Screen)
