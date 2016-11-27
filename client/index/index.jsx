@@ -1,6 +1,6 @@
 import ReactDOM from 'react-dom'
 import AppRouter from 'AppRouter'
-import 'index.css'
+import 'index.less'
 
 let root = document.getElementById('root')
 

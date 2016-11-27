@@ -8,6 +8,8 @@ var app = koa()
 
 app.use(serve('./dist'))
 
+app.use(serve('./assets'))
+
 app.use(function* () {
   if (this.path.includes('bundle.js')) {
     yield send(this, './dist/bundle.js')

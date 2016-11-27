@@ -29,6 +29,12 @@ let Colors = {
   themeBackgroundDark: '#8d99ae'
 }
 
+let Styles = {
+  emphasizedFont: {
+    fontFamily: '\'Bungee\', cursive'
+  }
+}
+
 let Utils = {
   getCurrentPage: () => {
     const regex = /page\/([0-9]+)/m
@@ -38,4 +44,4 @@ let Utils = {
   }
 }
 
-export { KeyCodes, ConfiguredRadium, Colors, Utils }
+export { KeyCodes, ConfiguredRadium, Colors, Styles, Utils }

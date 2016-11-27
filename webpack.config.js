@@ -2,14 +2,14 @@ var path = require('path')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: './client/assets/index.jsx',
+  entry: './client/index/index.jsx',
   output: {
     path: path.resolve('./dist'),
     filename: 'bundle.js'
   },
   resolve: {
     root: [
-      path.resolve('./client/assets/'),
+      path.resolve('./client/index/'),
       path.resolve('./client/components/'),
       path.resolve('./client/layouts/'),
       path.resolve('./client/lib'),
@@ -27,12 +27,12 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
-        loaders: ['style', 'css']
+        test: /\.(css|less)$/,
+        loaders: ['style', 'css', 'less']
       }
     ]
   },
   plugins: [new HtmlWebpackPlugin({
-    template: './client/assets/index.html'
+    template: './client/index/index.html'
   })]
 }

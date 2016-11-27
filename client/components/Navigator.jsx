@@ -15,7 +15,7 @@ class Navigator extends React.Component {
       <div
         style={styles.base}
       >
-        Navigator
+        {}
       </div>
     )
   }

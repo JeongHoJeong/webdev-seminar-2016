@@ -7,8 +7,7 @@ class Center extends React.Component {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
-      width: '100%',
-      height: '100%'
+      flexGrow: 1
     }
 
     return (
