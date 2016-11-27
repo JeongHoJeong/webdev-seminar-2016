@@ -6,8 +6,8 @@ class Navigator extends React.Component {
     const styles = {
       base: {
         position: 'absolute',
-        width: '100%',
-        height: '100%'
+        right: 0,
+        bottom: 0
       }
     }
 

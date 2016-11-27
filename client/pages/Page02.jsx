@@ -2,6 +2,9 @@ import React from 'react'
 import Page from 'Page'
 import Center from 'Center'
 import { Colors } from 'util'
+import CodeBlock from 'CodeBlock'
+
+let code = require('!raw-loader!pages')
 
 class Page02 extends React.Component {
   render () {
@@ -14,7 +17,10 @@ class Page02 extends React.Component {
         style={style}
       >
         <Center>
-          Page02
+          <CodeBlock
+            language='javascript'
+            code={code}
+          />
         </Center>
       </Page>
     )
