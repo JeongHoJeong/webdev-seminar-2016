@@ -2,6 +2,7 @@ import React from 'react'
 import { ConfiguredRadium, Colors } from 'util'
 import CircledCharacter from 'CircledCharacter'
 import MaterialIcon from 'MaterialIcon'
+import Color from 'color'
 
 class BaseSlide extends React.Component {
   constructor (props) {
@@ -29,8 +30,8 @@ class BaseSlide extends React.Component {
   }
 
   renderDecorators () {
-    const numOfDecorators = 4
-    let length = 2
+    const numOfDecorators = 5
+    let length = 12
     let position = 0
     let decorators = []
 
@@ -38,8 +39,8 @@ class BaseSlide extends React.Component {
       const currentLength = length
       const currentPosition = position
 
-      position += length * 2
-      length *= 2
+      position += length + 3
+      length /= 1.8
 
       decorators.push({
         position: currentPosition,
@@ -48,12 +49,16 @@ class BaseSlide extends React.Component {
     }
 
     return decorators.map((decorator, idx) => {
+      const lowestOpacity = 0.2
+      const highestOpacity = 0.8
+      const cellColor = Color(Colors.white).alpha(lowestOpacity + (highestOpacity - lowestOpacity) / (decorators.length - 1) * (decorators.length - idx - 1)).hslString()
+
       const style = {
         position: 'absolute',
         width: `${decorator.length}%`,
         height: '100%',
         right: this.state.isMounted ? `${decorator.position}%` : `${-decorator.length}%`,
-        backgroundColor: Colors.outerSpace,
+        background: `repeating-linear-gradient(45deg, ${cellColor}, ${cellColor} 5px, rgba(0, 0, 0, 0) 5px, rgba(0, 0, 0, 0) 20px)`,
         transition: 'right 1s ease'
       }
 
@@ -98,6 +103,8 @@ class BaseSlide extends React.Component {
         }
       },
       body: {
+        display: 'flex',
+        flexDirection: 'column',
         flexGrow: 1,
         boxSizing: 'border-box',
         padding: '40px'
@@ -120,10 +127,10 @@ class BaseSlide extends React.Component {
               name={this.props.icon}
             />
           </CircledCharacter>
+          {this.renderDecorators()}
           <span>
             {this.props.title}
           </span>
-          {this.renderDecorators()}
         </div>
         <div
           style={styles.body}

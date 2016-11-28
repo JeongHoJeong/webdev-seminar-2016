@@ -1,4 +1,5 @@
 import Radium from 'radium'
+import Color from 'color'
 
 let KeyCodes = {
   space: 32,
@@ -33,8 +34,11 @@ let Colors = {
   champagnePink: '#ead7d1',
   white: '#ffffff',
   sweetBrown: '#ad343e',
-  outerSpace: '#474747'
+  outerSpace: '#474747',
+  orange: '#f16529'
 }
+
+Colors.lightOrange = Color(Colors.orange).lighten(0.5).hslString()
 
 let Styles = {
   emphasizedFont: {
@@ -42,6 +46,9 @@ let Styles = {
   },
   subtitleFont: {
     fontFamily: '\'Ubuntu\', sans-serif'
+  },
+  koreanFont: {
+    fontFamily: '\'NanumBarunGothic\', sans-serif'
   }
 }
 

@@ -2,6 +2,8 @@ import React from 'react'
 import { ConfiguredRadium } from 'util'
 import Page from 'Page'
 import BaseSlide from 'BaseSlide'
+import LinearLayout from 'LinearLayout'
+import Center from 'Center'
 
 class Page2 extends React.Component {
   static getPageInfo () {
@@ -11,13 +13,47 @@ class Page2 extends React.Component {
   }
 
   render () {
+    const styles = {
+      img: {
+        height: '170px',
+        padding: '35px'
+      }
+    }
+
     return (
       <Page>
         <BaseSlide
           title='웹 환경의 급격한 변화'
           icon='error_outline'
         >
-          Body goes here
+          <LinearLayout
+            horizontal
+          >
+            <Center>
+              <img
+                style={styles.img}
+                src='/html5_logo.png'
+              />
+            </Center>
+            <Center>
+              <img
+                style={styles.img}
+                src='/css3_logo.png'
+              />
+            </Center>
+            <Center>
+              <img
+                style={styles.img}
+                src='/es6.png'
+              />
+            </Center>
+            <Center>
+              <img
+                style={styles.img}
+                src='/web_socket_logo.png'
+              />
+            </Center>
+          </LinearLayout>
         </BaseSlide>
       </Page>
     )

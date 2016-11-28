@@ -42,6 +42,29 @@ body {
   height: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.smooth-enter {
+  opacity: 0;
+
+  &.smooth-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+  }
+}
+
+.smooth-leave {
+  opacity: 1;
+
+  &.smooth-leave-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+  }
+}
+
 .slide-left-out {
   transform: translateX(-100%);
 }
