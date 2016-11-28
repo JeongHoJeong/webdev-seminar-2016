@@ -24,7 +24,7 @@
   src: url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.eot?#iefix') format('embedded-opentype'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.woff') format('woff'), url('//cdn.jsdelivr.net/font-nanumlight/1.0/NanumBarunGothicWebLight.ttf') format('truetype');
 }
 
-@import url('https://fonts.googleapis.com/css?family=Bungee|Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Bungee|Open+Sans|Ubuntu');
 
 html {
   background-color: white;
@@ -42,44 +42,102 @@ body {
   height: 100%;
 }
 
-.slide-left-enter {
+.slide-left-out {
+  transform: translateX(-100%);
+}
+
+.slide-right-out {
   transform: translateX(100%);
+}
+
+.slide-origin {
+  transform: translateX(0%);
+}
+
+.slide-left-enter {
+  .slide-right-out;
 
   &.slide-left-enter-active {
-    transform: translateX(0%);
-    .transition-x();
+    .slide-origin;
+    .slide;
   }
 }
 
 .slide-left-leave {
-  transform: translateX(0%);
+  .slide-origin;
 
   &.slide-left-leave-active {
-    transform: translateX(-100%);
-    .transition-x();
+    .slide-left-out;
+    .slide;
   }
 }
 
 .slide-right-enter {
-  transform: translateX(-100%);
+  .slide-left-out;
 
   &.slide-right-enter-active {
-    transform: translateX(0%);
-    .transition-x();
+    .slide-origin;
+    .slide;
   }
 }
 
 .slide-right-leave {
-  transform: translateX(0%);
+  .slide-origin;
 
   &.slide-right-leave-active {
-    transform: translateX(100%);
-    .transition-x();
+    .slide-right-out;
+    .slide;
   }
 }
 
-.transition-x {
-  .transition(transform 500ms cubic-bezier(0.645, 0.045, 0.355, 1.000));
+.slide-left-fade-enter {
+  opacity: 0;
+  .slide-right-out;
+
+  &.slide-left-fade-enter-active {
+    opacity: 1;
+    .slide-origin;
+    .slide;
+  }
+}
+
+.slide-left-fade-leave {
+  opacity: 1;
+  .slide-origin;
+
+  &.slide-left-fade-leave-active {
+    opacity: 0;
+    .slide-left-out;
+    .slide;
+  }
+}
+
+.slide-right-fade-enter {
+  opacity: 0;
+  .slide-left-out;
+
+  &.slide-right-fade-enter-active {
+    opacity: 1;
+    .slide-origin;
+    .slide;
+  }
+}
+
+.slide-right-fade-leave {
+  opacity: 1;
+  .slide-origin;
+
+  &.slide-right-fade-leave-active {
+    opacity: 0;
+    .slide-right-out;
+    .slide;
+  }
+}
+
+.slide {
+  transition-property: transform, opacity;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.645, 0.045, 0.355, 1.000);
 }
 
 :not(pre) > code[class*="language-"] {

@@ -14,7 +14,7 @@ class LinearLayout extends React.Component {
 
     return (
       <div
-        style={style}
+        style={[style, this.props.style]}
       >
         {this.props.children}
       </div>

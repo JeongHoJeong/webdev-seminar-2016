@@ -26,12 +26,22 @@ function ConfiguredRadium (component) {
 
 let Colors = {
   themeBackgroundLight: '#edf2f4',
-  themeBackgroundDark: '#8d99ae'
+  themeBackgroundDark: '#8d99ae',
+  themeBlack: '#0e1600',
+  themeYellow: '#fef400',
+  dustStorm: '#dbcdc6',
+  champagnePink: '#ead7d1',
+  white: '#ffffff',
+  sweetBrown: '#ad343e',
+  outerSpace: '#474747'
 }
 
 let Styles = {
   emphasizedFont: {
     fontFamily: '\'Bungee\', cursive'
+  },
+  subtitleFont: {
+    fontFamily: '\'Ubuntu\', sans-serif'
   }
 }
 

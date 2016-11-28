@@ -3,6 +3,12 @@ import Page from 'Page'
 import { ConfiguredRadium, Styles, Colors } from 'util'
 
 class Home extends React.Component {
+  static getPageInfo () {
+    return {
+      group: 'Home'
+    }
+  }
+
   render () {
     const styles = {
       page: {
@@ -20,9 +26,9 @@ class Home extends React.Component {
       title: [Styles.emphasizedFont, {
         fontSize: '64px'
       }],
-      subtitle: {
+      subtitle: [Styles.subtitleFont, {
         fontSize: '24px'
-      }
+      }]
     }
 
     return (

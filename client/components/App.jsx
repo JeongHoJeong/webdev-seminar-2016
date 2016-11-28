@@ -2,6 +2,7 @@ import React from 'react'
 import { ConfiguredRadium, KeyCodes, Utils } from 'util'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
+import Header from 'Header'
 import Navigator from 'Navigator'
 import pages from 'pages'
 
@@ -84,7 +85,12 @@ class App extends React.Component {
             {this.props.children}
           </div>
         </ReactCSSTransitionGroup>
-        <Navigator />
+        <Header
+          pageNumber={this.state.page}
+        />
+        <Navigator
+          pageNumber={this.state.page}
+        />
       </div>
     )
   }
