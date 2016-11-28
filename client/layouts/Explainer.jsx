@@ -27,8 +27,8 @@ class Explainer extends React.Component {
           marginBottom: '50px',
           fontSize: '48px',
           fontWeight: 700,
-          color: Colors.orange,
-          borderBottom: `8px solid ${Colors.orange}`
+          color: this.props.titleColor,
+          borderBottom: `8px solid ${this.props.titleColor}`
         },
         content: {
           padding: '30px',
@@ -65,6 +65,14 @@ class Explainer extends React.Component {
       </LinearLayout>
     )
   }
+}
+
+Explainer.propTypes = {
+  titleColor: React.PropTypes.string
+}
+
+Explainer.defaultProps = {
+  titleColor: Colors.white
 }
 
 export default ConfiguredRadium(Explainer)

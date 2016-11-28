@@ -4,7 +4,7 @@ import Color from 'color'
 
 class Bubble extends React.Component {
   render () {
-    const backgroundColor = Color(Colors.orange).alpha(0.9).hslString()
+    const backgroundColor = Color(this.props.color).alpha(0.9).hslString()
     const borderRadius = '7px'
 
     const styles = {
@@ -46,6 +46,14 @@ class Bubble extends React.Component {
       </div>
     )
   }
+}
+
+Bubble.propTypes = {
+  color: React.PropTypes.string
+}
+
+Bubble.defaultProps = {
+  color: Colors.themeBlack
 }
 
 export default ConfiguredRadium(Bubble)

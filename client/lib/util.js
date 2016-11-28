@@ -35,10 +35,16 @@ let Colors = {
   white: '#ffffff',
   sweetBrown: '#ad343e',
   outerSpace: '#474747',
-  orange: '#f16529'
+  orange: '#f16529',
+  blue: '#29a9df',
+  yellow: '#fbde34'
 }
 
 Colors.lightOrange = Color(Colors.orange).lighten(0.5).hslString()
+
+Colors.lightBlue = Color(Colors.blue).lighten(0.5).hslString()
+
+Colors.lightYellow = Color(Colors.yellow).lighten(0.5).hslString()
 
 let Styles = {
   emphasizedFont: {

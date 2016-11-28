@@ -76,6 +76,7 @@ class References extends React.Component {
       <Bubble
         key={this.state.show}
         style={style}
+        color={this.props.color}
       >
         {this.renderItems()}
       </Bubble>
@@ -92,7 +93,7 @@ class References extends React.Component {
         bottom: '30px',
         width: `${radius * 2}px`,
         height: `${radius * 2}px`,
-        backgroundColor: Color(Colors.orange).alpha(0.5).hslString(),
+        backgroundColor: Color(this.props.color).alpha(0.5).hslString(),
         borderRadius: `${radius}px`,
         color: Colors.white,
         justifyContent: 'center',
@@ -101,7 +102,7 @@ class References extends React.Component {
         cursor: 'pointer',
 
         ':hover': {
-          backgroundColor: Color(Colors.orange).alpha(0.8).hslString()
+          backgroundColor: Color(this.props.color).alpha(0.8).hslString()
         }
       },
       bubble: {
@@ -140,7 +141,12 @@ References.propTypes = {
       name: React.PropTypes.string.isRequired,
       link: React.PropTypes.string.isRequired
     })
-  ).isRequired
+  ).isRequired,
+  color: React.PropTypes.string
+}
+
+References.defaultProps = {
+  color: Colors.themeBlack
 }
 
 export default ConfiguredRadium(References)

@@ -7,7 +7,7 @@ import Plain from 'Plain'
 import Colored from 'Colored'
 import References from 'References'
 
-class Page3 extends React.Component {
+class Page6 extends React.Component {
   static getPageInfo () {
     return {
       group: 'Intro'
@@ -17,12 +17,12 @@ class Page3 extends React.Component {
   render () {
     const styles = {
       img: {
-        width: '240px'
+        width: '180px'
       }
     }
 
     const explanation = [
-      <Plain>W3C가 <Colored color={Colors.lightOrange}>2014년 10월 28일에 표준안으로 확정</Colored></Plain>,
+      <Plain>W3C가 <Colored color={Colors.lightYellow}>2014년 10월 28일에 표준안으로 확정</Colored></Plain>,
       <Plain>멀티미디어 지원, 그래픽 툴 발전, 하드웨어 지원 향상 등</Plain>,
       <Plain><b>Multimedia:</b> &lt;audio&gt;, &lt;video&gt;  support</Plain>,
       <Plain><b>Graphics:</b> Canvas, WebGL, SVG, ...</Plain>,
@@ -31,8 +31,8 @@ class Page3 extends React.Component {
 
     const references = [
       {
-        name: 'MDN: HTML5',
-        link: 'https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5'
+        name: 'MDN: CSS3',
+        link: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3'
       }
     ]
 
@@ -42,11 +42,11 @@ class Page3 extends React.Component {
           target={
             <img
               style={styles.img}
-              src='/html5_logo.png'
+              src='/web_socket_logo.png'
             />
           }
-          title={'HTML 5'}
-          titleColor={Colors.orange}
+          title={'Web Socket'}
+          titleColor={Colors.white}
         >
           <List
             items={explanation}
@@ -54,11 +54,11 @@ class Page3 extends React.Component {
         </Explainer>
         <References
           items={references}
-          color={Colors.orange}
+          color={Colors.themeBlack}
         />
       </Page>
     )
   }
 }
 
-export default ConfiguredRadium(Page3)
+export default ConfiguredRadium(Page6)
