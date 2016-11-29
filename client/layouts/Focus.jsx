@@ -58,6 +58,8 @@ class Focus extends React.Component {
         >
           <CircledCharacter
             style={styles.circle}
+            background
+            borderStyle='dashed'
           >
             {this.props.sectionNumber}
           </CircledCharacter>

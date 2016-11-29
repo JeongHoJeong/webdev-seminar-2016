@@ -22,17 +22,15 @@ class Page6 extends React.Component {
     }
 
     const explanation = [
-      <Plain>W3C가 <Colored color={Colors.lightYellow}>2014년 10월 28일에 표준안으로 확정</Colored></Plain>,
-      <Plain>멀티미디어 지원, 그래픽 툴 발전, 하드웨어 지원 향상 등</Plain>,
-      <Plain><b>Multimedia:</b> &lt;audio&gt;, &lt;video&gt;  support</Plain>,
-      <Plain><b>Graphics:</b> Canvas, WebGL, SVG, ...</Plain>,
-      <Plain><b>Performance:</b> Web Worker, Browser History, ...</Plain>
+      <Plain><Colored color={Colors.lightYellow}>2011년 12월</Colored> IETF에서 <Colored color={Colors.lightYellow}>RFC 6455로 표준화</Colored></Plain>,
+      <Plain>TCP 연결로 전이중 통신을 지원하며, 웹 서버와 브라우저 사이에 사용하도록 디자인됨</Plain>,
+      <Plain>고전적인 Ajax 통신을 <b>경량 통신</b>으로 대체할 수 있음</Plain>
     ]
 
     const references = [
       {
-        name: 'MDN: CSS3',
-        link: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3'
+        name: 'RFC 6455: The WebSocket Protocol',
+        link: 'https://tools.ietf.org/html/rfc6455/'
       }
     ]
 

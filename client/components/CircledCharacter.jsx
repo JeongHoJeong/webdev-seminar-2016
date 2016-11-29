@@ -47,7 +47,7 @@ class CircledCharacter extends React.Component {
           borderColor: Colors.white,
           borderWidth: '4px',
           borderRadius: this.props.radius,
-          borderStyle: 'dashed',
+          borderStyle: this.props.borderStyle,
           backgroundColor: null,
           transformOrigin: 'center',
           transition: 'all 1s ease'
@@ -64,7 +64,7 @@ class CircledCharacter extends React.Component {
         width: `${this.props.radius * 2}px`,
         height: `${this.props.radius * 2}px`,
         borderRadius: this.props.radius,
-        backgroundColor: Color(Colors.white).alpha(0.3).hslString()
+        backgroundColor: this.props.background ? Color(Colors.white).alpha(0.3).hslString() : null
       },
       character: {
         display: 'flex',
@@ -103,12 +103,16 @@ class CircledCharacter extends React.Component {
 
 CircledCharacter.propTypes = {
   radius: React.PropTypes.number,
-  iconSizeRatio: React.PropTypes.number
+  iconSizeRatio: React.PropTypes.number,
+  background: React.PropTypes.bool,
+  borderStyle: React.PropTypes.string
 }
 
 CircledCharacter.defaultProps = {
   radius: 200,
-  iconSizeRatio: 0.66
+  iconSizeRatio: 0.66,
+  background: false,
+  borderStyle: 'solid'
 }
 
 export default ConfiguredRadium(CircledCharacter)

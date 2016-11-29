@@ -24,7 +24,7 @@ class Page2 extends React.Component {
       <Page>
         <BaseSlide
           title='웹 환경의 급격한 진화'
-          icon='error_outline'
+          icon='error'
         >
           <LinearLayout
             horizontal

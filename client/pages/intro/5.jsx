@@ -22,17 +22,19 @@ class Page5 extends React.Component {
     }
 
     const explanation = [
-      <Plain>W3C가 <Colored color={Colors.lightYellow}>2014년 10월 28일에 표준안으로 확정</Colored></Plain>,
-      <Plain>멀티미디어 지원, 그래픽 툴 발전, 하드웨어 지원 향상 등</Plain>,
-      <Plain><b>Multimedia:</b> &lt;audio&gt;, &lt;video&gt;  support</Plain>,
-      <Plain><b>Graphics:</b> Canvas, WebGL, SVG, ...</Plain>,
-      <Plain><b>Performance:</b> Web Worker, Browser History, ...</Plain>
+      <Plain>2015년 6월 ECMA International에서 <Colored color={Colors.lightYellow}>ECMAScript 2015 Language Specification을 발표함</Colored></Plain>,
+      <Plain><b>ES6</b>, <b>ECMAScript Harmony</b> 등으로도 불림</Plain>,
+      <Plain><b>class, iterator, generator, promise</b> 등 유지보수성과 확장성을 높이는 요소들이 대거 추가됨</Plain>
     ]
 
     const references = [
       {
-        name: 'MDN: CSS3',
-        link: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3'
+        name: 'ECMA International: ECMAScript 2015 Language Specification',
+        link: 'http://www.ecma-international.org/ecma-262/6.0/'
+      },
+      {
+        name: 'ECMAScript 6 - New Features: Overview & Comparison',
+        link: 'http://es6-features.org/'
       }
     ]
 
@@ -54,7 +56,7 @@ class Page5 extends React.Component {
         </Explainer>
         <References
           items={references}
-          color={Colors.yellow}
+          color={Colors.darkYellow}
         />
       </Page>
     )

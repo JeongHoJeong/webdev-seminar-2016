@@ -46,6 +46,8 @@ Colors.lightBlue = Color(Colors.blue).lighten(0.5).hslString()
 
 Colors.lightYellow = Color(Colors.yellow).lighten(0.5).hslString()
 
+Colors.darkYellow = Color(Colors.yellow).darken(0.5).hslString()
+
 let Styles = {
   emphasizedFont: {
     fontFamily: '\'Bungee\', cursive'

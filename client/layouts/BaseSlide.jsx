@@ -2,7 +2,6 @@ import React from 'react'
 import { ConfiguredRadium, Colors } from 'util'
 import CircledCharacter from 'CircledCharacter'
 import MaterialIcon from 'MaterialIcon'
-import Color from 'color'
 
 class BaseSlide extends React.Component {
   constructor (props) {
@@ -30,7 +29,7 @@ class BaseSlide extends React.Component {
   }
 
   renderDecorators () {
-    const numOfDecorators = 5
+    const numOfDecorators = 10
     let length = 12
     let position = 0
     let decorators = []
@@ -39,8 +38,8 @@ class BaseSlide extends React.Component {
       const currentLength = length
       const currentPosition = position
 
-      position += length + 3
-      length /= 1.8
+      position += length + 0.5
+      length /= 1.7
 
       decorators.push({
         position: currentPosition,
@@ -49,16 +48,17 @@ class BaseSlide extends React.Component {
     }
 
     return decorators.map((decorator, idx) => {
-      const lowestOpacity = 0.2
-      const highestOpacity = 0.8
-      const cellColor = Color(Colors.white).alpha(lowestOpacity + (highestOpacity - lowestOpacity) / (decorators.length - 1) * (decorators.length - idx - 1)).hslString()
+      // const lowestOpacity = 0.2
+      // const highestOpacity = 1.0
+      // const cellColor = Color(Colors.white).alpha(lowestOpacity + (highestOpacity - lowestOpacity) / (decorators.length - 1) * (decorators.length - idx - 1)).hslString()
+      const cellColor = Colors.sweetBrown
 
       const style = {
         position: 'absolute',
         width: `${decorator.length}%`,
         height: '100%',
         right: this.state.isMounted ? `${decorator.position}%` : `${-decorator.length}%`,
-        background: `repeating-linear-gradient(45deg, ${cellColor}, ${cellColor} 5px, rgba(0, 0, 0, 0) 5px, rgba(0, 0, 0, 0) 20px)`,
+        background: `repeating-linear-gradient(45deg, ${cellColor}, ${cellColor} 8px, rgba(0, 0, 0, 0) 8px, rgba(0, 0, 0, 0) 20px)`,
         transition: 'right 1s ease'
       }
 
@@ -81,16 +81,18 @@ class BaseSlide extends React.Component {
       },
       title: {
         base: {
-          position: 'relative',
+          position: 'absolute',
           display: 'flex',
-          height: '20%',
-          padding: '30px',
+          left: '35px',
+          top: '35px',
+          height: '16%',
+          padding: '30px 350px 30px 30px',
           alignItems: 'center',
-          fontSize: '54px',
-          fontWeight: 700,
+          fontSize: '42px',
           boxSizing: 'border-box',
-          color: Colors.champagnePink,
-          backgroundColor: Colors.themeBlack
+          color: Colors.white,
+          backgroundColor: Colors.orange,
+          overflow: 'hidden'
         },
         icon: {
           container: {
@@ -107,7 +109,7 @@ class BaseSlide extends React.Component {
         flexDirection: 'column',
         flexGrow: 1,
         boxSizing: 'border-box',
-        padding: '40px'
+        padding: '170px 40px 40px 40px'
       }
     }
 
@@ -120,7 +122,8 @@ class BaseSlide extends React.Component {
         >
           <CircledCharacter
             style={styles.title.icon.container}
-            radius={35}
+            radius={20}
+            borderStyle='dotted'
           >
             <MaterialIcon
               style={styles.title.icon.base}

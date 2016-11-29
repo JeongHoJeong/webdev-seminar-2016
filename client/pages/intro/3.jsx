@@ -31,8 +31,12 @@ class Page3 extends React.Component {
 
     const references = [
       {
+        name: 'W3C: HTML5',
+        link: 'https://www.w3.org/TR/html5/'
+      },
+      {
         name: 'MDN: HTML5',
-        link: 'https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5'
+        link: 'https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/'
       }
     ]
 
