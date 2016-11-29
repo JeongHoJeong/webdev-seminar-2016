@@ -5,6 +5,8 @@ import intro3 from 'intro/3'
 import intro4 from 'intro/4'
 import intro5 from 'intro/5'
 import intro6 from 'intro/6'
+import intro7 from 'intro/7'
+import intro8 from 'intro/8'
 
 export default [
   Home,
@@ -13,5 +15,7 @@ export default [
   intro3,
   intro4,
   intro5,
-  intro6
+  intro6,
+  intro7,
+  intro8
 ]

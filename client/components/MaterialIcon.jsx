@@ -11,6 +11,7 @@ class MaterialIcon extends React.Component {
       <i
         className='material-icons'
         style={[style, this.props.style]}
+        onClick={this.props.onClick ? this.props.onClick : () => {}}
       >
         {this.props.name}
       </i>
@@ -19,7 +20,8 @@ class MaterialIcon extends React.Component {
 }
 
 MaterialIcon.propTypes = {
-  name: React.PropTypes.string.isRequired
+  name: React.PropTypes.string.isRequired,
+  onClick: React.PropTypes.func
 }
 
 export default ConfiguredRadium(MaterialIcon)
