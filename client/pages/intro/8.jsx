@@ -1,73 +1,10 @@
 import React from 'react'
-import { ConfiguredRadium, Colors } from 'util'
+import { ConfiguredRadium } from 'util'
 import Page from 'Page'
 import BaseSlide from 'BaseSlide'
 import MiniNavigator from 'MiniNavigator'
 import Center from 'Center'
-
-class ImageWithCaption extends React.Component {
-  render () {
-    const styles = {
-      root: {
-        position: 'absolute',
-        width: '100%'
-      },
-      base: {
-        width: '100%'
-      },
-      image: {
-        container: {
-          height: '300px',
-          backgroundColor: Colors.white,
-          overflow: 'hidden',
-          textAlign: 'center'
-        },
-        img: {
-          height: '100%'
-        }
-      },
-      caption: {
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '90px',
-        backgroundColor: Colors.themeBlack,
-        color: Colors.white,
-        fontSize: '32px',
-        fontWeight: 700
-      }
-    }
-
-    return (
-      <div
-        style={styles.root}
-      >
-        <div
-          style={styles.base}
-        >
-          <div
-            style={styles.image.container}
-          >
-            <img
-              style={styles.image.img}
-              src={this.props.src}
-            />
-          </div>
-          <div
-            style={styles.caption}
-          >
-            {this.props.caption}
-          </div>
-        </div>
-      </div>
-    )
-  }
-}
-
-ImageWithCaption.propTypes = {
-  src: React.PropTypes.string.isRequired,
-  caption: React.PropTypes.string.isRequired
-}
+import ImageWithCaption from 'ImageWithCaption'
 
 class Page8 extends React.Component {
   static getPageInfo () {
@@ -85,8 +22,16 @@ class Page8 extends React.Component {
         caption: 'isomorphic web'
       },
       {
-        src: '',
+        src: '/responsive-design.png',
         caption: 'responsive web'
+      },
+      {
+        src: '/pwa.png',
+        caption: 'progressive web apps'
+      },
+      {
+        src: '/cross-platform-development.png',
+        caption: 'cross platform'
       }
     ]
 
@@ -96,12 +41,17 @@ class Page8 extends React.Component {
   }
 
   renderItems () {
+    const style = {
+      position: 'absolute'
+    }
+
     return this.items.map((item, idx) => {
       return (
         <ImageWithCaption
           key={idx}
           src={item.src}
           caption={item.caption}
+          style={style}
         />
       )
     })

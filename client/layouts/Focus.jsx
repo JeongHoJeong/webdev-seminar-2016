@@ -58,6 +58,7 @@ class Focus extends React.Component {
         >
           <CircledCharacter
             style={styles.circle}
+            radius={150}
             background
             borderStyle='dashed'
           >
