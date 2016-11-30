@@ -5,9 +5,8 @@ import CodeBlock from 'CodeBlock'
 import SimpleHeaderLayout from 'SimpleHeaderLayout'
 import MiniNavigator from 'MiniNavigator'
 
-const npmScript1 = require('!raw-loader!./../../../assets/codes/npm.sh')
-const npmScript2 = require('!raw-loader!./../../../assets/codes/npm2.sh')
-const expressCode = require('!raw-loader!./../../../assets/codes/express.js')
+const reactCodeJsx = require('!raw!./../../../assets/codes/react_hello.jsx')
+const reactCodeJs = require('!raw!./../../../assets/codes/react_hello.js')
 
 class Slide extends React.Component {
   static getPageInfo () {
@@ -19,7 +18,7 @@ class Slide extends React.Component {
   render () {
     const styles = {
       base: {
-        width: '700px',
+        width: '500px',
         height: '400px'
       },
       code: {
@@ -31,7 +30,7 @@ class Slide extends React.Component {
     return (
       <Page>
         <SimpleHeaderLayout
-          title='Setting up Express project'
+          title='React: Hello, World'
         >
           <MiniNavigator
             style={styles.base}
@@ -39,20 +38,14 @@ class Slide extends React.Component {
             <CodeBlock
               key={0}
               style={styles.code}
-              language='bash'
-              code={npmScript1}
+              language='jsx'
+              code={reactCodeJsx}
             />
             <CodeBlock
               key={1}
               style={styles.code}
               language='javascript'
-              code={'/* server.js */\n' + expressCode}
-            />
-            <CodeBlock
-              key={2}
-              style={styles.code}
-              language='bash'
-              code={npmScript2}
+              code={reactCodeJs}
             />
           </MiniNavigator>
         </SimpleHeaderLayout>

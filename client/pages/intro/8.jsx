@@ -19,7 +19,7 @@ class Page8 extends React.Component {
     this.items = [
       {
         src: '/isomorphic.jpg',
-        caption: 'isomorphic web'
+        caption: 'isomorphic javascript'
       },
       {
         src: '/responsive-design.png',

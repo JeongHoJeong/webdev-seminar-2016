@@ -5,6 +5,7 @@ import Explainer from 'Explainer'
 import List from 'List'
 import Plain from 'Plain'
 import References from 'References'
+import Colored from 'Colored'
 
 class Slide extends React.Component {
   static getPageInfo () {
@@ -21,16 +22,16 @@ class Slide extends React.Component {
     }
 
     const explanation = [
-      <Plain><b>Node Package Manager</b></Plain>,
-      <Plain>3rd party JavaScript 패키지 매니저</Plain>,
-      <Plain>오픈 소스와 프라이빗(유료 라이센스) 패키지 모두 지원</Plain>,
-      <Plain>2016년 11월 말 기준 약 37만개의 패키지가 있음</Plain>
+      <Plain>Facebook에서 개발한 <Colored color={Colors.lightBlue}>JavaScript UI 라이브러리</Colored></Plain>,
+      <Plain>뷰 데이터의 명령적(imperative)이 아닌 <b>선언적(declarative) 기술</b></Plain>,
+      <Plain>Component 기반의 구조화</Plain>,
+      <Plain><b>React Native</b>를 통한 <Colored color={Colors.lightBlue}>cross-platform 지원</Colored></Plain>
     ]
 
     const references = [
       {
-        name: 'npmjs',
-        link: 'https://www.npmjs.com/'
+        name: 'React',
+        link: 'https://facebook.github.io/react/'
       }
     ]
 
@@ -40,11 +41,11 @@ class Slide extends React.Component {
           target={
             <img
               style={styles.img}
-              src='/npm-logo.svg'
+              src='/react.svg'
             />
           }
-          title={'npm'}
-          titleColor={Colors.orange}
+          title={'React'}
+          titleColor={Colors.blue}
         >
           <List
             items={explanation}
@@ -52,7 +53,7 @@ class Slide extends React.Component {
         </Explainer>
         <References
           items={references}
-          color={Colors.orange}
+          color={Colors.blue}
         />
       </Page>
     )

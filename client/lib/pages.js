@@ -18,6 +18,13 @@ import expressExample from 'body/express_example'
 import expressExample2 from 'body/express_example2'
 import npm from 'body/npm'
 import npmExample from 'body/npm_example'
+import react from 'body/react'
+import reactExample from 'body/react_example'
+import reactComponent from 'body/react_component'
+import reactComponentEmbedding from 'body/react_component_embedding'
+import reactCommunication from 'body/react_communication'
+import reactLifecycle from 'body/react_lifecycle'
+import babelAndWebpack from 'body/babel_and_webpack'
 
 export default [
   Home,
@@ -39,5 +46,12 @@ export default [
   expressExample,
   expressExample2,
   npm,
-  npmExample
+  npmExample,
+  react,
+  reactExample,
+  reactComponent,
+  reactComponentEmbedding,
+  reactCommunication,
+  reactLifecycle,
+  babelAndWebpack
 ]
