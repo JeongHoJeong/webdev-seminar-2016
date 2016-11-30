@@ -5,10 +5,10 @@ import Focus from 'Focus'
 import Plain from 'Plain'
 import Colored from 'Colored'
 
-class Page1 extends React.Component {
+class Slide extends React.Component {
   static getPageInfo () {
     return {
-      group: 'Intro'
+      group: 'body'
     }
   }
 
@@ -16,13 +16,14 @@ class Page1 extends React.Component {
     return (
       <Page>
         <Focus
-          title={<Plain><Colored color={Colors.orange}>2016년, 웹</Colored>에는<br /><u>무슨 일</u>이<br />일어나고 있는가</Plain>}
-          sectionNumber={1}
-          imageUrl='/intro2.jpg'
+          title={<Plain><Colored color={Colors.orange}>모던 웹 프레임워크</Colored><br />맛보기</Plain>}
+          sectionNumber={2}
+          imageUrl='/body_intro.jpg'
+          horizontal={false}
         />
       </Page>
     )
   }
 }
 
-export default ConfiguredRadium(Page1)
+export default ConfiguredRadium(Slide)

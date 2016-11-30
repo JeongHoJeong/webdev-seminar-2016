@@ -9,6 +9,15 @@ import intro7 from 'intro/7'
 import intro8 from 'intro/8'
 import intro9 from 'intro/9'
 import intro10 from 'intro/10'
+import bodyIndex from 'body/index'
+import nodejs from 'body/nodejs'
+import nodeExample from 'body/node_example'
+import nodeExample2 from 'body/node_example2'
+import express from 'body/express'
+import expressExample from 'body/express_example'
+import expressExample2 from 'body/express_example2'
+import npm from 'body/npm'
+import npmExample from 'body/npm_example'
 
 export default [
   Home,
@@ -21,5 +30,14 @@ export default [
   intro7,
   intro8,
   intro9,
-  intro10
+  intro10,
+  bodyIndex,
+  nodejs,
+  nodeExample,
+  nodeExample2,
+  express,
+  expressExample,
+  expressExample2,
+  npm,
+  npmExample
 ]

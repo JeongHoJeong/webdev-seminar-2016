@@ -1,6 +1,7 @@
 import React from 'react'
 import { ConfiguredRadium } from 'util'
 import { PrismCode } from 'react-prism'
+import Prism from 'prismjs'
 
 class CodeBlock extends React.Component {
   render () {

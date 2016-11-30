@@ -38,7 +38,8 @@ let Colors = {
   orange: '#f16529',
   blue: '#29a9df',
   yellow: '#fbde34',
-  transparent: 'rgba(255, 255, 255, 0)'
+  transparent: 'rgba(255, 255, 255, 0)',
+  codeBlockBackground: '#f5f2f0'
 }
 
 Colors.lightOrange = Color(Colors.orange).lighten(0.5).hslString()

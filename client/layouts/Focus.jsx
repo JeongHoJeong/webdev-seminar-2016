@@ -6,18 +6,58 @@ import CircledCharacter from 'CircledCharacter'
 import Color from 'color'
 
 class Focus extends React.Component {
+  renderCircle (leftOrTop) {
+    if (!this.props.horizontal && leftOrTop) {
+      const style = {
+        marginRight: '45px'
+      }
+
+      return (
+        <CircledCharacter
+          style={style}
+          radius={150}
+          background
+          borderStyle='dashed'
+        >
+          {this.props.sectionNumber}
+        </CircledCharacter>
+      )
+    } else if (this.props.horizontal && !leftOrTop) {
+      return (
+        <CircledCharacter
+          radius={150}
+          background
+          borderStyle='dashed'
+        >
+          {this.props.sectionNumber}
+        </CircledCharacter>
+      )
+    } else if (!this.props.horizontal && !leftOrTop) {
+      const style = {
+        height: '350px'
+      }
+
+      return (
+        <div
+          style={style}
+        />
+      )
+    }
+  }
+
   render () {
     const styles = {
       base: {
         position: 'relative',
         width: '100%',
         height: '100%',
-        backgroundImage: 'url(/intro2.jpg)',
+        backgroundImage: `url(${this.props.imageUrl})`,
         backgroundPosition: 'center',
         backgroundSize: 'cover'
       },
       title: {
         container: {
+          width: this.props.horizontal ? null : '100%',
           height: '100%',
           flexGrow: 0.4,
           backgroundColor: Color(Colors.themeBlack).alpha(0.95).hslString()
@@ -35,18 +75,18 @@ class Focus extends React.Component {
           flexGrow: 0.6
         },
         base: {}
-      },
-      circle: {}
+      }
     }
 
     return (
       <LinearLayout
         style={styles.base}
-        horizontal
+        horizontal={this.props.horizontal}
       >
         <Center
           style={styles.title.container}
         >
+          {this.renderCircle(true)}
           <div
             style={styles.title.base}
           >
@@ -56,14 +96,7 @@ class Focus extends React.Component {
         <Center
           style={styles.subtitle.container}
         >
-          <CircledCharacter
-            style={styles.circle}
-            radius={150}
-            background
-            borderStyle='dashed'
-          >
-            {this.props.sectionNumber}
-          </CircledCharacter>
+          {this.renderCircle(false)}
         </Center>
       </LinearLayout>
     )
@@ -72,7 +105,13 @@ class Focus extends React.Component {
 
 Focus.propTypes = {
   title: React.PropTypes.string.isRequired,
-  sectionNumber: React.PropTypes.number.isRequired
+  sectionNumber: React.PropTypes.number.isRequired,
+  imageUrl: React.PropTypes.string.isRequired,
+  horizontal: React.PropTypes.bool
+}
+
+Focus.defaultProps = {
+  horizontal: true
 }
 
 export default ConfiguredRadium(Focus)
