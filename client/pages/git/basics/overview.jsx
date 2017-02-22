@@ -1,15 +1,20 @@
 import React from 'react'
-import { ConfiguredRadium } from 'util'
+import { ConfiguredRadium, Colors } from 'util'
 import Page from 'Page'
 import BaseSlide from 'BaseSlide'
-import MiniNavigator from 'MiniNavigator'
 import Center from 'Center'
+import LinearLayout from 'LinearLayout'
 import ImageWithCaption from 'ImageWithCaption'
+import Plain from 'Plain'
+import List from 'List'
+import Colored from 'Colored'
+import MiniNavigator from 'MiniNavigator'
+import CodeBlock from 'CodeBlock'
 
-class Page8 extends React.Component {
+class _Page extends React.Component {
   static getPageInfo () {
     return {
-      group: 'Intro'
+      group: 'body'
     }
   }
 
@@ -18,20 +23,20 @@ class Page8 extends React.Component {
 
     this.items = [
       {
-        src: '/isomorphic.jpg',
-        caption: 'isomorphic javascript'
+        src: '/git/cvcs_vs_dvcs_simple.png',
+        caption: 'Distributed Version Control'
       },
       {
-        src: '/responsive-design.png',
-        caption: 'responsive web'
+        src: '/git/snapshots.png',
+        caption: 'Stream of Snapshots'
       },
       {
-        src: '/pwa.png',
-        caption: 'progressive web apps'
+        src: '/git/non_linear_dev.png',
+        caption: 'Strong Non-linear Development'
       },
       {
-        src: '/cross-platform-development.png',
-        caption: 'cross platform'
+        src: '/git/github_logo.png',
+        caption: 'Robust Community & Hosting'
       }
     ]
   }
@@ -55,21 +60,21 @@ class Page8 extends React.Component {
 
   render () {
     const styles = {
-      navigator: {
-        width: '40%',
-        height: '500px'
+      base: {
+        width: '900px',
+        height: '800px'
       }
     }
 
     return (
       <Page>
         <BaseSlide
-          title='변화하는 트렌드'
-          icon='error'
+          title='Git이란?'
+          icon='help'
         >
           <Center>
             <MiniNavigator
-              style={styles.navigator}
+              style={styles.base}
             >
               {this.renderItems()}
             </MiniNavigator>
@@ -80,4 +85,4 @@ class Page8 extends React.Component {
   }
 }
 
-export default ConfiguredRadium(Page8)
+export default ConfiguredRadium(_Page)
