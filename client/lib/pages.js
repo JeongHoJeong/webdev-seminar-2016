@@ -19,6 +19,7 @@ import rebase from 'git/branching/rebase'
 import octopusMerge from 'git/branching/octopus_merge'
 import branchCommands from 'git/branching/branch_commands'
 import branchAndMerging from 'git/branching/branch_and_merging'
+import mergeConflict from 'git/branching/merge_conflict'
 
 export default [
   home,
@@ -36,6 +37,7 @@ export default [
   branchCommands,
   merge,
   branchAndMerging,
+  mergeConflict,
   octopusMerge,
   rebase,
   gitFlow,
