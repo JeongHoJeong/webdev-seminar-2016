@@ -14,7 +14,8 @@ class SimpleHeaderLayout extends React.Component {
         backgroundColor: Colors.themeBlack
       },
       content: {
-        width: '100%'
+        width: '100%',
+        flexDirection: this.props.vertical ? 'column' : null
       }
     }
 
@@ -38,7 +39,8 @@ class SimpleHeaderLayout extends React.Component {
 }
 
 SimpleHeaderLayout.propTypes = {
-  title: React.PropTypes.string.isRequired
+  title: React.PropTypes.string.isRequired,
+  vertical: React.PropTypes.bool
 }
 
 export default ConfiguredRadium(SimpleHeaderLayout)

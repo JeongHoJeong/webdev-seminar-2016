@@ -4,10 +4,6 @@ import { ConfiguredRadium } from 'util'
 const styles = {
   base: {
     width: '450px',
-    marginLeft: '10px',
-    marginRight: '10px',
-    marginTop: '15px',
-    marginBottom: '15px'
   },
   title: {
     fontSize: '32px',
@@ -22,7 +18,7 @@ const styles = {
 class SmallExplainer extends React.Component {
   render () {
     return (
-      <div style={styles.base}>
+      <div style={[styles.base, this.props.style]}>
         <div style={styles.title}>
           {this.props.title}
         </div>

@@ -41,7 +41,7 @@ class _Page extends React.Component {
           <div
             style={styles.subtitle}
           >
-            2017. 2. x. Enbsoft Seminar
+            2017. 2. 24. Enbsoft Seminar
           </div>
           <div
             style={styles.title}

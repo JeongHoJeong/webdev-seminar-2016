@@ -23,20 +23,20 @@ class _Page extends React.Component {
 
     this.items = [
       {
-        src: '/git/cvcs_vs_dvcs_simple.png',
-        caption: 'Distributed Version Control'
+        src: '/git/blob_object.png',
+        caption: 'Blob Object'
       },
       {
-        src: '/git/snapshots.png',
-        caption: 'Stream of Snapshots'
+        src: '/git/git_tree.png',
+        caption: 'Tree Object'
       },
       {
-        src: '/git/non_linear_dev.png',
-        caption: 'Strong Non-linear Development'
+        src: '/git/git_objects.png',
+        caption: 'Commit Object'
       },
       {
-        src: '/git/github_logo.png',
-        caption: 'Robust Community & Hosting'
+        src: '/git/commits.png',
+        caption: 'Commits and Parents'
       }
     ]
   }
@@ -62,15 +62,15 @@ class _Page extends React.Component {
   render () {
     const styles = {
       base: {
-        width: '900px',
-        height: '800px'
+        width: '800px',
+        height: '700px'
       }
     }
 
     return (
       <Page>
         <BaseSlide
-          title='Git이란?'
+          title='커밋(commit) 객체 이해하기'
           icon='help'
         >
           <Center>

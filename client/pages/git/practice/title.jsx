@@ -16,9 +16,9 @@ class _Page extends React.Component {
     return (
       <Page>
         <Focus
-          title={<Plain><Colored color={Colors.orange}>Git</Colored> 시작하기</Plain>}
-          sectionNumber={1}
-          imageUrl='/git/startup.jpg'
+          title={<Plain>Git의 <Colored color={Colors.lightBlue}><u>적용</u></Colored></Plain>}
+          sectionNumber={3}
+          imageUrl='/git/tools.jpg'
         />
       </Page>
     )

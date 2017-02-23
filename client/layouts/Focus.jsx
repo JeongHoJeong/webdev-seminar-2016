@@ -104,7 +104,6 @@ class Focus extends React.Component {
 }
 
 Focus.propTypes = {
-  title: React.PropTypes.string.isRequired,
   sectionNumber: React.PropTypes.number.isRequired,
   imageUrl: React.PropTypes.string.isRequired,
   horizontal: React.PropTypes.bool

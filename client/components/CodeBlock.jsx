@@ -1,9 +1,9 @@
+/* global PrismLanguages */
+
 import React from 'react'
 import { ConfiguredRadium } from 'util'
 import Prism from 'prismjs'
 import PrismLanguages from 'prism-languages'
-
-PrismLanguages // to simply disable Standard warning
 
 class CodeBlock extends React.Component {
   componentDidMount () {

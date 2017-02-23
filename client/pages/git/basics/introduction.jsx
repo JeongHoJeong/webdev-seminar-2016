@@ -29,16 +29,10 @@ class _Page extends React.Component {
   }
 
   renderCodes () {
-    const style = {
-      position: 'absolute',
-      width: '100%'
-    }
-
     return this.items.map((item, idx) => {
       return (
         <CodeBlock
           key={idx}
-          style={style}
           language={item.language}
           code={item.code}
         />
@@ -48,9 +42,13 @@ class _Page extends React.Component {
 
   render () {
     const styles = {
-      base: {
-        width: '700px',
-        height: '400px'
+      explainer: {
+        flexGrow: 1
+      },
+      codeWrapper: {
+        display: 'flex',
+        padding: '20px',
+        flexGrow: 1
       }
     }
 
@@ -64,37 +62,40 @@ class _Page extends React.Component {
       <Page>
         <SimpleHeaderLayout
           title='새로운 Git 저장소 생성'
+          vertical
         >
-          <LinearLayout>
-            <MiniNavigator
-              style={styles.base}
-            >
-              {this.renderCodes()}
-            </MiniNavigator>
-            <LinearLayout>
-              <SmallExplainer
-                title='git init'
-              >
-                <List
-                  items={description.init}
-                />
-              </SmallExplainer>
-              <SmallExplainer
-                title='git add'
-              >
-                <List
-                  items={description.add}
-                />
-              </SmallExplainer>
-              <SmallExplainer
-                title='git commit'
-              >
-                <List
-                  items={description.commit}
-                />
-              </SmallExplainer>
-            </LinearLayout>
-          </LinearLayout>
+          <div
+            style={styles.codeWrapper}
+          >
+            <CodeBlock
+              language={'bash'}
+              code={init_sh}
+            />
+          </div>
+          <SmallExplainer
+            title='git init'
+            style={styles.explainer}
+          >
+            <List
+              items={description.init}
+            />
+          </SmallExplainer>
+          <SmallExplainer
+            title='git add'
+            style={styles.explainer}
+          >
+            <List
+              items={description.add}
+            />
+          </SmallExplainer>
+          <SmallExplainer
+            title='git commit'
+            style={styles.explainer}
+          >
+            <List
+              items={description.commit}
+            />
+          </SmallExplainer>
         </SimpleHeaderLayout>
       </Page>
     )

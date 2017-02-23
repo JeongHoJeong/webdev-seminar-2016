@@ -12,13 +12,14 @@ class ImageWithCaption extends React.Component {
       },
       image: {
         container: {
-          display: 'flex',
-          justifyContent: 'center',
-          height: this.props.imageHeight,
+          position: 'relative',
           backgroundColor: Colors.white,
-          overflow: 'hidden'
+          overflow: 'hidden',
+          height: this.props.imageHeight,
         },
         img: {
+          objectFit: 'contain',
+          width: '100%',
           height: '100%'
         }
       },
