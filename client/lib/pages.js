@@ -20,6 +20,14 @@ import octopusMerge from 'git/branching/octopus_merge'
 import branchCommands from 'git/branching/branch_commands'
 import branchAndMerging from 'git/branching/branch_and_merging'
 import mergeConflict from 'git/branching/merge_conflict'
+import reverting from 'git/practice/reverting'
+import whyGit from 'git/practice/why_git'
+import githubFlow from 'git/practice/github_flow'
+import githubFlowDiagram from 'git/practice/github_flow_diagram'
+import mergeCommands from 'git/branching/merge_commands'
+import interactiveRebase from 'git/branching/interactive_rebase'
+import usefulCommands from 'git/practice/useful_commands.jsx'
+import revisionSelection from 'git/branching/revision_selection.jsx'
 
 export default [
   home,
@@ -40,8 +48,15 @@ export default [
   mergeConflict,
   octopusMerge,
   rebase,
+  mergeCommands,
+  interactiveRebase,
   gitFlow,
   gitFlowDiagram,
   gitFlowDetail,
-  practiceTitle
+  practiceTitle,
+  reverting,
+  usefulCommands,
+  whyGit,
+  githubFlow,
+  githubFlowDiagram
 ]

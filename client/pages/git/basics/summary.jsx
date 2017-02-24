@@ -25,7 +25,8 @@ class _Page extends React.Component {
       commit: [
         <Plain>하나의 commit 객체는 <b>저장소 전체의 한 상태(스냅샷)</b>를 나타낸다.</Plain>,
         <Plain>commit 객체는 해당 commit의 저자 등을 나타내는 일부 메타데이터를 담고 있으며, tree 객체와 바로 이전(부모) commit을 가리킨다.</Plain>,
-        <Plain><Colored color={Colors.orange}>tree 객체</Colored>는 하나의 디렉토리의 구조와 동일하며, 각 파일은 <Colored color={Colors.orange}>blob 객체</Colored>로 나타내어진다.</Plain>
+        <Plain><Colored color={Colors.orange}>tree 객체</Colored>는 하나의 디렉토리의 구조와 동일하며, 각 파일은 <Colored color={Colors.orange}>blob 객체</Colored>로 나타내어진다.</Plain>,
+        <Plain>가급적 하나의 commit이 명확한 의미를 담도록 stage할 파일들을 잘 추려내서 따로따로 commit하는 편이 좋다.</Plain>
       ]
     }
 

@@ -31,7 +31,8 @@ class _Page extends React.Component {
     }
 
     const items = [
-      <Plain>2개 이상의 branch를 하나로 합치는 작업</Plain>
+      <Plain>2개 이상의 branch를 하나로 합치는 작업</Plain>,
+      <Plain>병합의 결과로 하나의 새로운 merge commit이 생성된다.</Plain>
     ]
 
     return (

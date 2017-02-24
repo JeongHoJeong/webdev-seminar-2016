@@ -16,16 +16,16 @@ class _Page extends React.Component {
 
   render () {
     const items = {
-      fileManagement: [
-        <Plain>Git은 working directory 내의 추적되는 파일만을 관리한다.</Plain>,
-        <Plain>파일을 저장소에 등록하려면 원하는 파일을 <u>stage</u>한 후 <u>commit</u>을 해야 한다.</Plain>,
-        <Plain>파일을 stage하는 명령어는 <Colored color={Colors.orange}>git add</Colored>, commit하는 명령어는 <Colored color={Colors.orange}>git commit</Colored>이다.</Plain>,
-        <Plain><Colored color={Colors.orange}>git status</Colored> 명령어로 파일들의 관리 상태(staged, untracked, unmodified, modified)를 알 수 있다.</Plain>
+      overview: [
+        <Plain>Git Flow는 merge 기반의 브랜칭 모델이다.</Plain>,
+        <Plain>master와 develop을 영구 브랜치로 두고, feature 브랜치에서 신규 기능을 작업한다.</Plain>
       ],
-      commit: [
-        <Plain>하나의 commit 객체는 <b>저장소 전체의 한 상태(스냅샷)</b>를 나타낸다.</Plain>,
-        <Plain>commit 객체는 해당 commit의 저자 등을 나타내는 일부 메타데이터를 담고 있으며, tree 객체와 바로 이전(부모) commit을 가리킨다.</Plain>,
-        <Plain><Colored color={Colors.orange}>tree 객체</Colored>는 하나의 디렉토리의 구조와 동일하며, 각 파일은 <Colored color={Colors.orange}>blob 객체</Colored>로 나타내어진다.</Plain>
+      details: [
+        <Plain><Colored color={Colors.orange}><b>master:</b></Colored> 가장 안정적인 브랜치. 최종 배포 상태 커밋만이 이 브랜치에 오며, 각 배포 버전마다 태그를 붙인다.</Plain>,
+        <Plain><Colored color={Colors.orange}><b>develop:</b></Colored> 개발 브랜치. 개발 작업은 모두 이쪽으로 머지된다.</Plain>,
+        <Plain><Colored color={Colors.orange}><b>feature:</b></Colored> 기능 브랜치. 신규 기능은 develop 브랜치에서 새 feature 브랜치를 따서 개발한 후 <b>develop 브랜치에 머지</b>한다.</Plain>,
+        <Plain><Colored color={Colors.orange}><b>release:</b></Colored> 배포 브랜치. 배포를 위한 최종 작업을 진행한 후 <b>develop과 master 브랜치에 머지</b>해 배포를 완료한다.</Plain>,
+        <Plain><Colored color={Colors.orange}><b>hotfix:</b></Colored> 핫픽스 브랜치. master에 release 브랜치가 머지된 후에도 발견된 문제가 있으면 수정하고 <b>develop과 master 브랜치에 머지</b>한다.</Plain>
       ]
     }
 
@@ -39,23 +39,23 @@ class _Page extends React.Component {
     return (
       <Page>
         <SimpleHeaderLayout
-          title='중간 정리'
+          title='Git-Flow'
           vertical
         >
           <SmallExplainer
-            title='파일의 관리'
+            title='개요'
             style={styles.explainer}
           >
             <List
-              items={items.fileManagement}
+              items={items.overview}
             />
           </SmallExplainer>
           <SmallExplainer
-            title='커밋(commit)'
+            title='브랜치별 관리법'
             style={styles.explainer}
           >
             <List
-              items={items.commit}
+              items={items.details}
             />
           </SmallExplainer>
         </SimpleHeaderLayout>
