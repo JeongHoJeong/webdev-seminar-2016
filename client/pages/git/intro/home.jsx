@@ -28,6 +28,14 @@ class _Page extends React.Component {
       }],
       subtitle: [Styles.subtitleFont, {
         fontSize: '24px'
+      }],
+      announcement: [Styles.koreanFont, {
+        position: 'absolute',
+        top: '25px',
+        width: '100%',
+        fontSize: '24px',
+        textAlign: 'center',
+        fontWeight: 300
       }]
     }
 
@@ -48,6 +56,16 @@ class _Page extends React.Component {
           >
             GIT
           </div>
+        </div>
+        <div
+          style={styles.announcement}
+        >
+          <p>
+            가급적 최신 브라우저를 사용해 주세요.
+          </p>
+          <p>
+            키보드의 좌우 화살표 키로 슬라이드를 넘기세요.
+          </p>
         </div>
       </Page>
     )
