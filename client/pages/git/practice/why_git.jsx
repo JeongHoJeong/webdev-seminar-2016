@@ -27,7 +27,7 @@ class Panel extends React.Component {
 class _Page extends React.Component {
   static getPageInfo () {
     return {
-      group: 'body'
+      group: 'practice'
     }
   }
 

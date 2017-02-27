@@ -13,7 +13,7 @@ const init_sh = require('!raw-loader!./../../../../assets/codes/git/init.sh')
 class _Page extends React.Component {
   static getPageInfo () {
     return {
-      group: 'body'
+      group: 'basics'
     }
   }
 

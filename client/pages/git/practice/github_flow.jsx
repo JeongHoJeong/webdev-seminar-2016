@@ -10,7 +10,7 @@ import References from 'References'
 class Slide extends React.Component {
   static getPageInfo () {
     return {
-      group: 'body'
+      group: 'practice'
     }
   }
 

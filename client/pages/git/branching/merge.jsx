@@ -15,7 +15,7 @@ import SmallExplainer from 'SmallExplainer'
 class _Page extends React.Component {
   static getPageInfo () {
     return {
-      group: 'body'
+      group: 'branching'
     }
   }
 

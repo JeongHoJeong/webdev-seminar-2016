@@ -7,7 +7,7 @@ import MiniNavigator from 'MiniNavigator'
 class _Page extends React.Component {
   static getPageInfo() {
     return {
-      group: 'body'
+      group: 'branching'
     }
   }
 

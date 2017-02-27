@@ -8,7 +8,7 @@ import Colored from 'Colored'
 class _Page extends React.Component {
   static getPageInfo () {
     return {
-      group: 'Intro'
+      group: 'basics'
     }
   }
 

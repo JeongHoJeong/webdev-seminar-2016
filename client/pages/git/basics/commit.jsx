@@ -14,7 +14,7 @@ import CodeBlock from 'CodeBlock'
 class _Page extends React.Component {
   static getPageInfo () {
     return {
-      group: 'body'
+      group: 'basics'
     }
   }
 
