@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfiguredRadium, Colors } from 'util'
+import { ConfiguredRadium, Colors, RootPath } from 'util'
 import Page from 'Page'
 import Explainer from 'Explainer'
 import List from 'List'
@@ -41,7 +41,7 @@ class Slide extends React.Component {
           target={
             <img
               style={styles.img}
-              src='/git/branching_model.png'
+              src={`${RootPath}/git/branching_model.png`}
             />
           }
           title={'Git-Flow'}

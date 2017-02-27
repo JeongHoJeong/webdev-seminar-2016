@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfiguredRadium, KeyCodes, Utils } from 'util'
+import { ConfiguredRadium, KeyCodes, Utils, RootPath } from 'util'
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import Header from 'Header'
@@ -37,7 +37,7 @@ class App extends React.Component {
       })
 
       this.context.router.push({
-        pathname: `/page/${newPage}`
+        pathname: `${RootPath}/page/${newPage}`
       })
     }
   }

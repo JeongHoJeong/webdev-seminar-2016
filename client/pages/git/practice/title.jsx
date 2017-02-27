@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfiguredRadium, Colors } from 'util'
+import { ConfiguredRadium, Colors, RootPath } from 'util'
 import Page from 'Page'
 import Focus from 'Focus'
 import Plain from 'Plain'
@@ -18,7 +18,7 @@ class _Page extends React.Component {
         <Focus
           title={<Plain>Git의 <Colored color={Colors.lightBlue}><u>적용</u></Colored></Plain>}
           sectionNumber={3}
-          imageUrl='/git/tools.jpg'
+          imageUrl={`${RootPath}/git/tools.jpg`}
         />
       </Page>
     )

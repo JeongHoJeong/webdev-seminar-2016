@@ -1,6 +1,6 @@
 import React from 'react'
 import Page from 'Page'
-import { ConfiguredRadium, Styles, Colors } from 'util'
+import { ConfiguredRadium, Styles, Colors, RootPath } from 'util'
 
 class _Page extends React.Component {
   static getPageInfo () {
@@ -13,7 +13,7 @@ class _Page extends React.Component {
     const styles = {
       page: {
         backgroundColor: Colors.themeBackgroundDark,
-        backgroundImage: `url(/git/intro.jpg)`,
+        backgroundImage: `url(${RootPath}/git/intro.jpg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
@@ -41,7 +41,7 @@ class _Page extends React.Component {
           <div
             style={styles.subtitle}
           >
-            2017. 2. 24. Enbsoft Seminar
+            2017. 2. 24. Enbsoft Seminar / Jeongho Jeong
           </div>
           <div
             style={styles.title}

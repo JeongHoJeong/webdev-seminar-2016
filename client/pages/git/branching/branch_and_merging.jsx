@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfiguredRadium } from 'util'
+import { ConfiguredRadium, RootPath } from 'util'
 import Page from 'Page'
 import SimpleHeaderLayout from 'SimpleHeaderLayout'
 import MiniNavigator from 'MiniNavigator'
@@ -15,14 +15,14 @@ class _Page extends React.Component {
     super(props)
 
     this.items = [
-      '/git/branching_1.png',
-      '/git/branching_2.png',
-      '/git/branching_3.png',
-      '/git/branching_4.png',
-      '/git/branching_5.png',
-      '/git/branching_6.png',
-      '/git/branching_7.png',
-      '/git/branching_8.png'
+      `${RootPath}/git/branching_1.png`,
+      `${RootPath}/git/branching_2.png`,
+      `${RootPath}/git/branching_3.png`,
+      `${RootPath}/git/branching_4.png`,
+      `${RootPath}/git/branching_5.png`,
+      `${RootPath}/git/branching_6.png`,
+      `${RootPath}/git/branching_7.png`,
+      `${RootPath}/git/branching_8.png`
     ]
   }
 

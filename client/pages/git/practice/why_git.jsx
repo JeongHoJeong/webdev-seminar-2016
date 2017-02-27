@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfiguredRadium, Colors } from 'util'
+import { ConfiguredRadium, Colors, RootPath } from 'util'
 import Page from 'Page'
 import BaseSlide from 'BaseSlide'
 import Center from 'Center'
@@ -36,15 +36,15 @@ class _Page extends React.Component {
 
     this.items = [
       {
-        src: '/git/isolated_dev.png',
+        src: `${RootPath}/git/isolated_dev.png`,
         caption: '개발 환경의 격리'
       },
       {
-        src: '/git/safe_merge.jpg',
+        src: `${RootPath}/git/safe_merge.jpg`,
         caption: '안전한 병합'
       },
       {
-        src: '/git/code-review.jpg',
+        src: `${RootPath}/git/code-review.jpg`,
         caption: '코드 리뷰'
       }
     ]

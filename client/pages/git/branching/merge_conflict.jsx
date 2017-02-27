@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfiguredRadium } from 'util'
+import { ConfiguredRadium, RootPath } from 'util'
 import Page from 'Page'
 import SimpleHeaderLayout from 'SimpleHeaderLayout'
 import MiniNavigator from 'MiniNavigator'
@@ -15,8 +15,8 @@ class _Page extends React.Component {
     super(props)
 
     this.items = [
-      '/git/git_conflict.png',
-      '/git/git_conflict_example.png'
+      `${RootPath}/git/git_conflict.png`,
+      `${RootPath}/git/git_conflict_example.png`
     ]
   }
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfiguredRadium, Colors } from 'util'
+import { ConfiguredRadium, Colors, RootPath } from 'util'
 import Page from 'Page'
 import BaseSlide from 'BaseSlide'
 import Center from 'Center'
@@ -23,19 +23,19 @@ class _Page extends React.Component {
 
     this.items = [
       {
-        src: '/git/blob_object.png',
+        src: `${RootPath}/git/blob_object.png`,
         caption: 'Blob Object'
       },
       {
-        src: '/git/git_tree.png',
+        src: `${RootPath}/git/git_tree.png`,
         caption: 'Tree Object'
       },
       {
-        src: '/git/git_objects.png',
+        src: `${RootPath}/git/git_objects.png`,
         caption: 'Commit Object'
       },
       {
-        src: '/git/commits.png',
+        src: `${RootPath}/git/commits.png`,
         caption: 'Commits and Parents'
       }
     ]

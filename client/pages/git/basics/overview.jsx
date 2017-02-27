@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfiguredRadium, Colors } from 'util'
+import { ConfiguredRadium, Colors, RootPath } from 'util'
 import Page from 'Page'
 import BaseSlide from 'BaseSlide'
 import Center from 'Center'
@@ -23,19 +23,19 @@ class _Page extends React.Component {
 
     this.items = [
       {
-        src: '/git/cvcs_vs_dvcs_simple.png',
+        src: `${RootPath}/git/cvcs_vs_dvcs_simple.png`,
         caption: 'Distributed Version Control'
       },
       {
-        src: '/git/snapshots.png',
+        src: `${RootPath}/git/snapshots.png`,
         caption: 'Stream of Snapshots'
       },
       {
-        src: '/git/non_linear_dev.png',
+        src: `${RootPath}/git/non_linear_dev.png`,
         caption: 'Strong Non-linear Development'
       },
       {
-        src: '/git/github_logo.png',
+        src: `${RootPath}/git/github_logo.png`,
         caption: 'Robust Community & Hosting'
       }
     ]

@@ -71,4 +71,8 @@ let Utils = {
   }
 }
 
-export { KeyCodes, ConfiguredRadium, Colors, Styles, Utils }
+const RootPath =
+  (location.hostname.indexOf('enbsoft') !== -1) ?
+  '/~jhjeong/git-seminar' : ''
+
+export { KeyCodes, ConfiguredRadium, Colors, Styles, Utils, RootPath }

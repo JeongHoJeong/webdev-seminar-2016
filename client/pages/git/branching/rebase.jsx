@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfiguredRadium, Colors } from 'util'
+import { ConfiguredRadium, Colors, RootPath } from 'util'
 import Page from 'Page'
 import BaseSlide from 'BaseSlide'
 import Center from 'Center'
@@ -43,7 +43,7 @@ class _Page extends React.Component {
             style={styles.center}
           >
             <img
-              src='/git/rebase.svg'
+              src={`${RootPath}/git/rebase.svg`}
               style={styles.img}
             />
             <SmallExplainer

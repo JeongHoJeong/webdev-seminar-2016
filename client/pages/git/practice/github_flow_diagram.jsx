@@ -1,5 +1,5 @@
 import React from 'react'
-import { ConfiguredRadium } from 'util'
+import { ConfiguredRadium, RootPath } from 'util'
 import Page from 'Page'
 import SimpleHeaderLayout from 'SimpleHeaderLayout'
 import Center from 'Center'
@@ -18,8 +18,8 @@ class _Page extends React.Component {
           style={{height: '100%'}}
         >
           <img
-            style={{height: '100%', objectFit: 'contain'}}
-            src='/git/github_flow.png'
+            style={{height: '100%', width: '100%', objectFit: 'contain'}}
+            src={`${RootPath}/git/github_flow.png`}
           />
         </Center>
       </Page>
