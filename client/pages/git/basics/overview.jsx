@@ -10,6 +10,7 @@ import List from 'List'
 import Colored from 'Colored'
 import MiniNavigator from 'MiniNavigator'
 import CodeBlock from 'CodeBlock'
+import References from 'References'
 
 class _Page extends React.Component {
   static getPageInfo () {
@@ -67,6 +68,25 @@ class _Page extends React.Component {
       }
     }
 
+    const references = [
+      {
+        name: 'Source Control Done Right',
+        link: 'http://thedailywtf.com/articles/Source-Control-Done-Right'
+      },
+      {
+        name: 'Getting Started - Git Basics',
+        link: 'https://git-scm.com/book/en/v2/Getting-Started-Git-Basics'
+      },
+      {
+        name: '5 Types of Git Workflows',
+        link: 'https://buddy.works/blog/5-types-of-git-workflows'
+      },
+      {
+        name: 'GitHub',
+        link: 'https://github.com/'
+      }
+    ]
+
     return (
       <Page>
         <BaseSlide
@@ -81,6 +101,10 @@ class _Page extends React.Component {
             </MiniNavigator>
           </Center>
         </BaseSlide>
+        <References
+          items={references}
+          color={Colors.orange}
+        />
       </Page>
     )
   }

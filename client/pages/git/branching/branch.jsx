@@ -11,6 +11,7 @@ import Colored from 'Colored'
 import MiniNavigator from 'MiniNavigator'
 import CodeBlock from 'CodeBlock'
 import SmallExplainer from 'SmallExplainer'
+import References from 'References'
 
 class _Page extends React.Component {
   static getPageInfo () {
@@ -31,8 +32,15 @@ class _Page extends React.Component {
 
     const items = [
       <Plain><Colored color={Colors.orange}><b>넓은 의미:</b></Colored> 하나의 독립적인 작업 흐름</Plain>,
-      <Plain><Colored color={Colors.orange}><b>좁은 의미:</b></Colored> 특정 commit으로의 포인터</Plain>,
+      <Plain><Colored color={Colors.orange}><b>구체적인 의미:</b></Colored> 특정 commit으로의 포인터</Plain>,
       <Plain>보통 작업의 단위마다 브랜치를 나누고, 작업을 마친 후 하나로 합친다.</Plain>
+    ]
+
+    const references = [
+      {
+        name: 'Using Branches',
+        link: 'https://www.atlassian.com/git/tutorials/using-branches'
+      }
     ]
 
     return (
@@ -57,6 +65,10 @@ class _Page extends React.Component {
             </SmallExplainer>
           </Center>
         </BaseSlide>
+        <References
+          items={references}
+          color={Colors.orange}
+        />
       </Page>
     )
   }

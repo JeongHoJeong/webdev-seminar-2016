@@ -1,8 +1,9 @@
 import React from 'react'
-import { ConfiguredRadium, RootPath } from 'util'
+import { ConfiguredRadium, RootPath, Colors } from 'util'
 import Page from 'Page'
 import SimpleHeaderLayout from 'SimpleHeaderLayout'
 import Center from 'Center'
+import References from 'References'
 
 class _Page extends React.Component {
   static getPageInfo () {
@@ -12,6 +13,13 @@ class _Page extends React.Component {
   }
 
   render () {
+    const references = [
+      {
+        name: 'Staging Area',
+        link: 'https://git-scm.com/about/staging-area'
+      }
+    ]
+
     return (
       <Page>
         <Center
@@ -21,6 +29,10 @@ class _Page extends React.Component {
             src={`${RootPath}/git/staging.png`}
           />
         </Center>
+        <References
+          items={references}
+          color={Colors.orange}
+        />
       </Page>
     )
   }

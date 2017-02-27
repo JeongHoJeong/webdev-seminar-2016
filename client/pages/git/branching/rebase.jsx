@@ -11,6 +11,7 @@ import Colored from 'Colored'
 import MiniNavigator from 'MiniNavigator'
 import CodeBlock from 'CodeBlock'
 import SmallExplainer from 'SmallExplainer'
+import References from 'References'
 
 class _Page extends React.Component {
   static getPageInfo () {
@@ -31,6 +32,13 @@ class _Page extends React.Component {
 
     const items = [
       <Plain>하나의 branch를 특정 commit부터 다시 시작하게 하는 작업</Plain>
+    ]
+
+    const references = [
+      {
+        name: 'Rewriting History',
+        link: 'https://www.atlassian.com/git/tutorials/rewriting-history'
+      }
     ]
 
     return (
@@ -55,6 +63,10 @@ class _Page extends React.Component {
             </SmallExplainer>
           </Center>
         </BaseSlide>
+        <References
+          items={references}
+          color={Colors.orange}
+        />
       </Page>
     )
   }

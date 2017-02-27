@@ -10,6 +10,7 @@ import List from 'List'
 import Colored from 'Colored'
 import MiniNavigator from 'MiniNavigator'
 import CodeBlock from 'CodeBlock'
+import References from 'References'
 
 class _Page extends React.Component {
   static getPageInfo () {
@@ -67,6 +68,17 @@ class _Page extends React.Component {
       }
     }
 
+    const references = [
+      {
+        name: 'The Git Object Model',
+        link: 'http://shafiulazam.com/gitbook/1_the_git_object_model.html'
+      },
+      {
+        name: 'Git Objects',
+        link: 'https://git-scm.com/book/en/v2/Git-Internals-Git-Objects'
+      }
+    ]
+
     return (
       <Page>
         <BaseSlide
@@ -81,6 +93,10 @@ class _Page extends React.Component {
             </MiniNavigator>
           </Center>
         </BaseSlide>
+        <References
+          items={references}
+          color={Colors.orange}
+        />
       </Page>
     )
   }

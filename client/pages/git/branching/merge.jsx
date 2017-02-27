@@ -11,6 +11,7 @@ import Colored from 'Colored'
 import MiniNavigator from 'MiniNavigator'
 import CodeBlock from 'CodeBlock'
 import SmallExplainer from 'SmallExplainer'
+import References from 'References'
 
 class _Page extends React.Component {
   static getPageInfo () {
@@ -35,6 +36,13 @@ class _Page extends React.Component {
       <Plain>병합의 결과로 하나의 새로운 merge commit이 생성된다.</Plain>
     ]
 
+    const references = [
+      {
+        name: 'Fugitive.vim - Resolving Merge Conflicts with Vimdiff',
+        link: 'http://vimcasts.org/episodes/fugitive-vim-resolving-merge-conflicts-with-vimdiff/'
+      }
+    ]
+
     return (
       <Page>
         <BaseSlide
@@ -56,6 +64,10 @@ class _Page extends React.Component {
             </SmallExplainer>
           </Center>
         </BaseSlide>
+        <References
+          items={references}
+          color={Colors.orange}
+        />
       </Page>
     )
   }

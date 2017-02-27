@@ -1,8 +1,9 @@
 import React from 'react'
-import { ConfiguredRadium, RootPath } from 'util'
+import { Colors, ConfiguredRadium, RootPath } from 'util'
 import Page from 'Page'
 import SimpleHeaderLayout from 'SimpleHeaderLayout'
 import MiniNavigator from 'MiniNavigator'
+import References from 'References'
 
 class _Page extends React.Component {
   static getPageInfo() {
@@ -45,6 +46,13 @@ class _Page extends React.Component {
   }
 
   render () {
+    const references = [
+      {
+        name: 'Git Branching - Basic Branching and Merging',
+        link: 'https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging'
+      }
+    ]
+
     return (
       <Page>
         <SimpleHeaderLayout
@@ -54,6 +62,10 @@ class _Page extends React.Component {
             {this.renderItems()}
           </MiniNavigator>
         </SimpleHeaderLayout>
+        <References
+          items={references}
+          color={Colors.orange}
+        />
       </Page>
     )
   }

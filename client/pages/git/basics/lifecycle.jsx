@@ -1,8 +1,9 @@
 import React from 'react'
-import { ConfiguredRadium, RootPath } from 'util'
+import { ConfiguredRadium, RootPath, Colors } from 'util'
 import Page from 'Page'
 import SimpleHeaderLayout from 'SimpleHeaderLayout'
 import Center from 'Center'
+import References from 'References'
 
 class _Page extends React.Component {
   static getPageInfo () {
@@ -15,6 +16,13 @@ class _Page extends React.Component {
     const fullHeightStyle = {
       height: '100%'
     }
+
+    const references = [
+      {
+        name: 'Git Basics - Recording Changes to the Repository',
+        link: 'https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository'
+      }
+    ]
 
     return (
       <Page>
@@ -29,6 +37,10 @@ class _Page extends React.Component {
             />
           </Center>
         </SimpleHeaderLayout>
+        <References
+          items={references}
+          color={Colors.orange}
+        />
       </Page>
     )
   }
