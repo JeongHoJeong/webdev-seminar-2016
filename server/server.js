@@ -18,4 +18,12 @@ app.use(function* () {
   }
 })
 
-app.listen(3000)
+var port
+
+if (process.argv.length > 2) {
+  port = process.argv[2]
+} else {
+  port = 3000
+}
+
+app.listen(port)
