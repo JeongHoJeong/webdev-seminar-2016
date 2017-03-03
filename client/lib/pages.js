@@ -1,62 +1,57 @@
-import home from 'git/intro/home'
-import basicsTitle from 'git/basics/title'
-import basicsOverview from 'git/basics/overview'
-import introduction from 'git/basics/introduction'
-import cvcsVsDvcs from 'git/basics/cvcs_vs_dvcs'
-import staging from 'git/basics/staging'
-import lifecycle from 'git/basics/lifecycle'
-import gitFlow from 'git/branching/git_flow'
-import gitStatusExample from 'git/basics/git_status_example'
-import commit from 'git/basics/commit'
-import branchingTitle from 'git/branching/title'
-import practiceTitle from 'git/practice/title'
-import basicsSummary from 'git/basics/summary'
-import gitFlowDiagram from 'git/branching/git_flow_diagram'
-import gitFlowDetail from 'git/branching/git_flow_detail'
-import branch from 'git/branching/branch'
-import merge from 'git/branching/merge'
-import rebase from 'git/branching/rebase'
-import octopusMerge from 'git/branching/octopus_merge'
-import branchCommands from 'git/branching/branch_commands'
-import branchAndMerging from 'git/branching/branch_and_merging'
-import mergeConflict from 'git/branching/merge_conflict'
-import reverting from 'git/practice/reverting'
-import whyGit from 'git/practice/why_git'
-import githubFlow from 'git/practice/github_flow'
-import githubFlowDiagram from 'git/practice/github_flow_diagram'
-import mergeCommands from 'git/branching/merge_commands'
-import interactiveRebase from 'git/branching/interactive_rebase'
-import usefulCommands from 'git/practice/useful_commands.jsx'
-import revisionSelection from 'git/branching/revision_selection.jsx'
+import Home from 'Home'
+import intro1 from 'intro/1'
+import intro2 from 'intro/2'
+import intro3 from 'intro/3'
+import intro4 from 'intro/4'
+import intro5 from 'intro/5'
+import intro6 from 'intro/6'
+import intro7 from 'intro/7'
+import intro8 from 'intro/8'
+import intro9 from 'intro/9'
+import intro10 from 'intro/10'
+import bodyIndex from 'body/index'
+import nodejs from 'body/nodejs'
+import nodeExample from 'body/node_example'
+import nodeExample2 from 'body/node_example2'
+import express from 'body/express'
+import expressExample from 'body/express_example'
+import expressExample2 from 'body/express_example2'
+import npm from 'body/npm'
+import npmExample from 'body/npm_example'
+import react from 'body/react'
+import reactExample from 'body/react_example'
+import reactComponent from 'body/react_component'
+import reactComponentEmbedding from 'body/react_component_embedding'
+import reactCommunication from 'body/react_communication'
+import reactLifecycle from 'body/react_lifecycle'
+import babelAndWebpack from 'body/babel_and_webpack'
 
 export default [
-  home,
-  basicsTitle,
-  basicsOverview,
-  cvcsVsDvcs,
-  staging,
-  lifecycle,
-  gitStatusExample,
-  introduction,
-  commit,
-  basicsSummary,
-  branchingTitle,
-  branch,
-  branchCommands,
-  merge,
-  branchAndMerging,
-  mergeConflict,
-  octopusMerge,
-  rebase,
-  mergeCommands,
-  interactiveRebase,
-  gitFlow,
-  gitFlowDiagram,
-  gitFlowDetail,
-  practiceTitle,
-  reverting,
-  usefulCommands,
-  whyGit,
-  githubFlow,
-  githubFlowDiagram
+  Home,
+  intro1,
+  intro2,
+  intro3,
+  intro4,
+  intro5,
+  intro6,
+  intro7,
+  intro8,
+  intro9,
+  intro10,
+  bodyIndex,
+  nodejs,
+  nodeExample,
+  nodeExample2,
+  express,
+  expressExample,
+  expressExample2,
+  npm,
+  npmExample,
+  react,
+  reactExample,
+  reactComponent,
+  reactComponentEmbedding,
+  reactCommunication,
+  reactLifecycle,
+  babelAndWebpack
 ]

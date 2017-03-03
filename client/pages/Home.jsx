@@ -41,7 +41,7 @@ class Home extends React.Component {
           <div
             style={styles.subtitle}
           >
-            2016. 11. 30 Enbsoft Seminar
+            2016. 11. 30 Enbsoft Seminar by Jeongho Jeong
           </div>
           <div
             style={styles.title}
