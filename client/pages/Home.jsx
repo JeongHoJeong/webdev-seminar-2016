@@ -28,6 +28,11 @@ class Home extends React.Component {
       }],
       subtitle: [Styles.subtitleFont, {
         fontSize: '24px'
+      }],
+      help: [Styles.koreanFont, {
+        position: 'absolute',
+        left: '20px',
+        top: '20px'
       }]
     }
 
@@ -48,6 +53,12 @@ class Home extends React.Component {
           >
             WEB DEV TRENDS 2016
           </div>
+        </div>
+        <div
+          style={styles.help}
+        >
+          <p>가급적 최신 브라우저를 사용해 주세요.</p>
+          <p>키보드의 좌우 화살표 키로 슬라이드를 넘기세요.</p>
         </div>
       </Page>
     )
